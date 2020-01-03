@@ -25,5 +25,5 @@ class AppState extends Model {
       location: "Bangalore" // TODO: enum
       );
 
-  static List<Vendor> vendors = [urban, urban];
+  List<Vendor> get vendors => [urban, urban];
 }
