@@ -33,10 +33,15 @@ class BusinessHour {
   BusinessHour({this.day, this.start, this.end});
 }
 
+enum Category {
+  boutique,
+  home_baker,
+}
+
 // listing?
 class Vendor {
   String name;
-  String category; // TODO: category
+  Category category;
   String description;
   List<String> tags;
   String address;
