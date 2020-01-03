@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'You have pushed the button this many times:',
             ),
-            Text("counter-value",
+            Text("some-value",
               style: Theme.of(context).textTheme.display1,
             ),
           ],
