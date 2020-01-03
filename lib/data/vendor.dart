@@ -1,18 +1,19 @@
+
 class FAQ {
-  String question;
-  String answer;
+  final String question;
+  final String answer;
 
   FAQ({this.question, this.answer});
 }
 
 class SocialMedia {
-  String twitter;
-  String facebook;
-  String linkedin;
-  String youtube;
-  String youtubeURL; // maybe different from youtube handler
-  String instagram;
-  String pinterest;
+  final String twitter;
+  final String facebook;
+  final String linkedin;
+  final String youtube;
+  final String youtubeURL; // maybe different from youtube handler
+  final String instagram;
+  final String pinterest;
 
   SocialMedia({
     this.twitter,
@@ -26,9 +27,9 @@ class SocialMedia {
 }
 
 class BusinessHour {
-  String day;
-  String start;
-  String end;
+  final String day;
+  final String start;
+  final String end;
 
   BusinessHour({this.day, this.start, this.end});
 }
@@ -40,31 +41,31 @@ enum Category {
 
 // listing?
 class Vendor {
-  String name;
+  final String name;
   Category category;
-  String description;
+  final String description;
   List<String> tags;
-  String address;
+  final String address;
   double latitude;
   double longitude;
-  String phone;
-  String email;
-  String homepage;
+  final String phone;
+  final String email;
+  final String homepage;
 
   SocialMedia socialMedia;
 
-  String priceStatus;
-  double priceRangeFrom;
-  double priceRangeTo;
-  bool claimStatus;
+  final String priceStatus;
+  final double priceRangeFrom;
+  final double priceRangeTo;
+  final bool claimStatus;
 
-  List<FAQ> faqs;
-  List<String> photos;
+  final List<FAQ> faqs;
+  final List<String> photos;
 
-  String pricingPlanID;
-  List<BusinessHour> businessHours;
-  String tagline;
-  String location;
+  final String pricingPlanID;
+  final List<BusinessHour> businessHours;
+  final String tagline;
+  final String location;
   bool internationalShipping;
 
   Vendor(

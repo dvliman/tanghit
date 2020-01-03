@@ -2,8 +2,7 @@ import 'package:scoped_model/scoped_model.dart';
 import 'package:tanghit/data/vendor.dart';
 
 class AppState extends Model {
-  List<Vendor> _vendors = [
-    Vendor(
+  static Vendor urban = Vendor(
       name: "Urban Dhara",
       category: Category.boutique,
       description:
@@ -16,7 +15,15 @@ class AppState extends Model {
       longitude: 77.587164,
       phone: "918026580924",
       email: "info@urbandhara.com",
-    ),
-    Vendor(),
-  ];
+      socialMedia: SocialMedia(
+        instagram: "urbandharalabel",
+      ),
+      priceStatus: "inexpensive",
+      priceRangeFrom: 1000,
+      priceRangeTo: 5000,
+      claimStatus: false,
+      location: "Bangalore" // TODO: enum
+      );
+
+  static List<Vendor> vendors = [urban, urban];
 }
