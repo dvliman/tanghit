@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tanghit/screens/boutiques.dart';
+import 'package:tanghit/widgets/boutique.dart';
 
 class HomeTab extends StatefulWidget {
   HomeTab({Key key}) : super(key: key);
@@ -9,6 +11,7 @@ class HomeTab extends StatefulWidget {
 
 class _HomeTabState extends State<HomeTab> {
   int _index = 0;
+  double _iconSize = 30.0;
 
   @override
   Widget build(BuildContext context) {
@@ -17,32 +20,31 @@ class _HomeTabState extends State<HomeTab> {
         children: <Widget>[
           Offstage(
             offstage: _index != 0,
-            child: TickerMode(
-              enabled: _index == 0,
-              child: Text("home")
-            ),
+            child: TickerMode(enabled: _index == 0, child: BoutiquesScreen()),
           ),
           Offstage(
-            offstage: _index != 3,
-            child: TickerMode(
-              enabled: true,
-              child: Text('settings')
-            )
+            offstage: _index != 1,
+            child: TickerMode(enabled: _index == 1, child: Text("Saved")),
           ),
+          Offstage(
+              offstage: _index != 2,
+              child: TickerMode(enabled: _index == 2, child: Text('Search'))),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.shifting,
+        type: BottomNavigationBarType.fixed,
         currentIndex: _index,
-        onTap: (int index) { setState((){ this._index = index; }); },
-        selectedItemColor: Theme.of(context).textTheme.headline.color,
-        unselectedItemColor: Theme.of(context).textTheme.overline.color,
+        onTap: (int index) {
+          setState(() {
+            this._index = index;
+          });
+        },
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).bottomAppBarColor,
             icon: Icon(
               Icons.list,
-              size: 20.0,
+              size: _iconSize,
             ),
             title: Container(
               margin: EdgeInsets.only(top: 2.0),
@@ -57,13 +59,29 @@ class _HomeTabState extends State<HomeTab> {
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).bottomAppBarColor,
             icon: Icon(
-              Icons.settings,
-              size: 20.0,
+              Icons.favorite,
+              size: _iconSize,
             ),
             title: Container(
               margin: EdgeInsets.only(top: 2.0),
               child: Text(
-                'Setting',
+                'Saved',
+                style: TextStyle(
+                  fontSize: 12.0,
+                ),
+              ),
+            ),
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: Theme.of(context).bottomAppBarColor,
+            icon: Icon(
+              Icons.search,
+              size: _iconSize,
+            ),
+            title: Container(
+              margin: EdgeInsets.only(top: 2.0),
+              child: Text(
+                'Search',
               ),
             ),
           ),

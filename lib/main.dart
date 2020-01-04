@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:tanghit/data/app_state.dart';
+import 'package:tanghit/navigations/home_tab.dart';
+import 'package:tanghit/screens/boutiques.dart';
 import 'package:tanghit/styles.dart' as Asset;
-
-import 'navigations/home_tab.dart';
 
 void main() =>
     runApp(ScopedModel<AppState>(
