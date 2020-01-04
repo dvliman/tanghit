@@ -41,7 +41,7 @@ class _HomeTabState extends State<HomeTab> {
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).bottomAppBarColor,
             icon: Icon(
-              Icons.calendar_today,
+              Icons.list,
               size: 20.0,
             ),
             title: Container(
