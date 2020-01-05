@@ -21,3 +21,4 @@ flutter:
   assets:
     - assets/images/first.jpg
     - assets/images/second.jpg
+    - assets/images/third.jpg

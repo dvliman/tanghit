@@ -51,5 +51,20 @@ class AppState extends Model {
     internationalShipping: true,
   );
 
-  List<Vendor> get vendors => [first, second];
+  static Vendor third = Vendor(
+    name: "Studio Y",
+    category: Category.boutique,
+    description: '''We are a lifestyle store based in Bengaluru. Studio Y is a concept store retailing some fabulous designer labels across clothing, bags and lifestyle accessories. Our mission is to actively encourage and be instrumental in providing a platform for women entrepreneurs to showcase their creativity and passion.''',
+    tags: ["tops", "tunics", "dresses", "skirts", "shrugs & capes"],
+    photos: ["assets/images/third.jpg"],
+    address: "#30, 1st Floor, Safina Plaza, Shivaji Nagar, Bengaluru – 560 001",
+    phone: "9071999284",
+    email: "Support@studioy.in",
+    priceStatus: "moderate",
+    priceRangeFrom: 0,
+    priceRangeTo: 3000,
+    claimStatus: false,
+  );
+
+  List<Vendor> get vendors => [first, second, third];
 }
