@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tanghit/data/vendor.dart';
+import 'package:tanghit/widgets/boutique_detail.dart';
 
 class Boutique extends StatelessWidget {
   final Vendor vendor;
@@ -9,16 +10,24 @@ class Boutique extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 3,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(8),
-        child: Container(
-          child: Row(
-            children: <Widget>[
-              boutiqueImage(vendor),
-              Expanded(child: boutiqueDescription(vendor, 100)),
-            ],
+    return InkWell(
+      onTap: () => {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => BoutiqueDetail(this.vendor)))
+      },
+      child: Card(
+        elevation: 3,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(8),
+          child: Container(
+            child: Row(
+              children: <Widget>[
+                boutiqueImage(vendor),
+                Expanded(child: boutiqueDescription(vendor, 100)),
+              ],
+            ),
           ),
         ),
       ),
