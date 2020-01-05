@@ -31,10 +31,10 @@ class AppState extends Model {
   static Vendor second = Vendor(
     name: "Label Hiral vasa ",
     category: Category.boutique,
-    description: "contemporary clothing line for women and mens wear",
+    description: "Contemporary clothing line for women and mens wear",
     tags: ["indo-western", "blouses", "saree", "embroidery"],
     photos: [
-      "assets/images/first.jpg",
+      "assets/images/second.jpg",
     ],
     address: "Basavanagudi, bangalorea",
     phone: "9739271935",

@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:tanghit/data/vendor.dart';
-import 'package:tanghit/screens/boutique_detail.dart';
-import 'package:tanghit/widgets/zoom_clip_asset_image.dart';
-import 'package:tanghit/styles.dart';
-import 'dart:developer' as developer;
+import 'package:tanghit/widgets/boutique_detail.dart';
 
 class Boutique extends StatelessWidget {
   final Vendor vendor;
@@ -12,43 +10,70 @@ class Boutique extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    developer.log("screen: boutique");
-
-    return GestureDetector(
-      onTap: () =>
-          Navigator.of(context).push<void>(CupertinoPageRoute(
-            builder: (context) => BoutiqueDetailScreen(this.vendor),
-            fullscreenDialog: true,
-          )),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ZoomClipAssetImage(
-            imageAsset: vendor.mainPhoto,
-            zoom: 2.4,
-            height: 72,
-            width: 72,
-          ),
-          SizedBox(width: 10),
-          Flexible(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Text(vendor.name, style: Styles.headlineName),
-                  ],
-                ),
-                Text(
-                  vendor.description,
-                  style: Styles.headlineDescription,
-                ),
+    return InkWell(
+      onTap: () => {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => BoutiqueDetail(this.vendor)))
+      },
+      child: Card(
+        elevation: 3,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(8),
+          child: Container(
+            child: Row(
+              children: <Widget>[
+                boutiqueImage(vendor),
+                Expanded(child: boutiqueDescription(vendor, 100)),
               ],
             ),
-          )
-        ],
+          ),
+        ),
       ),
     );
   }
+
+  Widget boutiqueImage(Vendor vendor) => ClipRRect(
+        child: FadeInImage(
+          placeholder: AssetImage(vendor.mainPhoto),
+          image: AssetImage(vendor.mainPhoto),
+          width: 100,
+          height: 100,
+          fit: BoxFit.cover,
+        ),
+      );
+
+  Widget boutiqueDescription(Vendor vendor, double height) => Container(
+        height: height,
+        padding: EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 8,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Text(
+              vendor.name,
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.black87,
+                fontWeight: FontWeight.bold,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+            Text(
+              vendor.description,
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.black54,
+              ),
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
+        ),
+      );
 }

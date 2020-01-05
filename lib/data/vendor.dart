@@ -92,5 +92,5 @@ class Vendor {
       this.location,
       this.internationalShipping});
 
-  String get mainPhoto => "assets/images/first.jpg";
+  String get mainPhoto => photos[0];
 }
