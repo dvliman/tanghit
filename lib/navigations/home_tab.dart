@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tanghit/screens/boutiques.dart';
-import 'package:tanghit/widgets/boutique.dart';
 
 class HomeTab extends StatefulWidget {
   HomeTab({Key key}) : super(key: key);
@@ -23,11 +22,8 @@ class _HomeTabState extends State<HomeTab> {
           ),
           Offstage(
             offstage: _index != 1,
-            child: TickerMode(enabled: _index == 1, child: Text("Saved")),
+            child: TickerMode(enabled: _index == 1, child: Text("Settings")),
           ),
-          Offstage(
-              offstage: _index != 2,
-              child: TickerMode(enabled: _index == 2, child: Text('Search'))),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -40,8 +36,7 @@ class _HomeTabState extends State<HomeTab> {
         },
         items: <BottomNavigationBarItem>[
           item(Icons.list, "Boutiques"),
-          item(Icons.favorite, "Saved"),
-          item(Icons.search, "Search"),
+          item(Icons.settings, "Settings"),
         ],
       ),
     );

@@ -26,7 +26,7 @@ class Boutique extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 boutiqueImage(vendor),
-                Expanded(child: boutiqueDescription(vendor, 100)),
+                boutiqueDescription(vendor, 100),
               ],
             ),
           ),
@@ -45,36 +45,38 @@ class Boutique extends StatelessWidget {
         ),
       );
 
-  Widget boutiqueDescription(Vendor vendor, double height) => Container(
-        height: height,
-        padding: EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 8,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Text(
-              vendor.name,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.black87,
-                fontWeight: FontWeight.bold,
+  Widget boutiqueDescription(Vendor vendor, double height) => Expanded(
+        child: Container(
+          height: height,
+          padding: EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 8,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Text(
+                vendor.name,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black87,
+                  fontWeight: FontWeight.bold,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
-            Text(
-              vendor.description,
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.black54,
+              Text(
+                vendor.description,
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.black54,
+                ),
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
               ),
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ],
+            ],
+          ),
         ),
       );
 }
