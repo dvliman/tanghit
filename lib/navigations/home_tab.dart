@@ -11,7 +11,6 @@ class HomeTab extends StatefulWidget {
 
 class _HomeTabState extends State<HomeTab> {
   int _index = 0;
-  double _iconSize = 30.0;
 
   @override
   Widget build(BuildContext context) {
@@ -40,52 +39,24 @@ class _HomeTabState extends State<HomeTab> {
           });
         },
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            backgroundColor: Theme.of(context).bottomAppBarColor,
-            icon: Icon(
-              Icons.list,
-              size: _iconSize,
-            ),
-            title: Container(
-              margin: EdgeInsets.only(top: 2.0),
-              child: Text(
-                'Boutiques',
-                style: TextStyle(
-                  fontSize: 12.0,
-                ),
-              ),
-            ),
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: Theme.of(context).bottomAppBarColor,
-            icon: Icon(
-              Icons.favorite,
-              size: _iconSize,
-            ),
-            title: Container(
-              margin: EdgeInsets.only(top: 2.0),
-              child: Text(
-                'Saved',
-                style: TextStyle(
-                  fontSize: 12.0,
-                ),
-              ),
-            ),
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: Theme.of(context).bottomAppBarColor,
-            icon: Icon(
-              Icons.search,
-              size: _iconSize,
-            ),
-            title: Container(
-              margin: EdgeInsets.only(top: 2.0),
-              child: Text(
-                'Search',
-              ),
-            ),
-          ),
+          item(Icons.list, "Boutiques"),
+          item(Icons.favorite, "Saved"),
+          item(Icons.search, "Search"),
         ],
+      ),
+    );
+  }
+
+  BottomNavigationBarItem item(IconData iconData, String iconText) {
+    return BottomNavigationBarItem(
+      backgroundColor: Theme.of(context).bottomAppBarColor,
+      icon: Icon(
+        iconData,
+        size: 30.0,
+      ),
+      title: Container(
+        margin: EdgeInsets.only(top: 2.0),
+        child: Text(iconText),
       ),
     );
   }
