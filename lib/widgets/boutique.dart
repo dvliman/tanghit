@@ -18,7 +18,8 @@ class Boutique extends StatelessWidget {
                 builder: (context) => BoutiqueDetail(this.vendor)))
       },
       child: Card(
-        elevation: 3,
+        elevation: 2.0,
+        margin: EdgeInsets.all(1.0),
         child: InkWell(
           borderRadius: BorderRadius.circular(8),
           child: Container(
