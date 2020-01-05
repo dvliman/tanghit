@@ -10,6 +10,9 @@ class BoutiquesScreen extends StatelessWidget {
 
     return Scaffold(
         backgroundColor: Theme.of(context).backgroundColor,
+        appBar: AppBar(
+          title: Text("Boutiques"),
+        ),
         body: ListView.builder(
             itemCount: model.vendors.length,
             itemBuilder: (context, index) {
