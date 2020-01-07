@@ -12,13 +12,19 @@ class SettingsScreen extends StatelessWidget {
         body: ListView(
           children: [
             ListTile(
-                title: Text("About us")
+                title: Text("Support Center")
             ),
-            SwitchListTile.adaptive(
-              activeColor: Theme.of(context).colorScheme.secondary,
-              title: Text('Use location'),
-              subtitle: Text('Positions will be filtered by the your location.'),
-              value: false, onChanged: (bool value) {},
+            InkWell(
+              child: ListTile(
+                leading: Icon(Icons.call),
+                title: Text("Call: (714) 253 2851")
+              )
+            ),
+            InkWell(
+              child: ListTile(
+                leading: Icon(Icons.mail),
+                title: Text("Email: support@tanghit.com")
+              )
             ),
           ]
         )

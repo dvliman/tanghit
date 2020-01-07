@@ -40,6 +40,7 @@ Widget buildProperties(Vendor vendor) => Container(
       padding: const EdgeInsets.all(8),
       child: Table(
         children: [
+          // TODO: if value null, dont make row
           buildProperty("Category", maybeEmpty(vendor.category.toString())),
           buildProperty("Email", maybeEmpty(vendor.email)),
           buildProperty("Phone", maybeEmpty(vendor.phone)),
