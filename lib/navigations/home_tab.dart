@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanghit/screens/boutiques.dart';
+import 'package:tanghit/screens/settings.dart';
 
 class HomeTab extends StatefulWidget {
   HomeTab({Key key}) : super(key: key);
@@ -22,7 +23,7 @@ class _HomeTabState extends State<HomeTab> {
           ),
           Offstage(
             offstage: _index != 1,
-            child: TickerMode(enabled: _index == 1, child: Text("Settings")),
+            child: TickerMode(enabled: _index == 1, child: SettingsScreen()),
           ),
         ],
       ),
