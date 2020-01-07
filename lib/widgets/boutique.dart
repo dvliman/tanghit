@@ -25,7 +25,7 @@ class Boutique extends StatelessWidget {
           child: Container(
             child: Row(
               children: <Widget>[
-                boutiqueImage(vendor),
+                Flexible(child: boutiqueImage(vendor)),
                 boutiqueDescription(vendor, 100),
               ],
             ),
