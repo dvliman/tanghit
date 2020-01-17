@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:tanghit/data/vendor.dart';
 import 'package:tanghit/widgets/boutique_detail.dart';
 
-class Boutique extends StatelessWidget {
+class BoutiqueCell extends StatelessWidget {
   final Vendor vendor;
 
-  const Boutique(this.vendor);
+  const BoutiqueCell(this.vendor);
 
   @override
   Widget build(BuildContext context) {

@@ -17,16 +17,15 @@ class BoutiqueDetail extends StatelessWidget {
           )
         ]),
         body: Column(children: [
-          Expanded(flex: 3, child: buildImage(context, vendor.mainPhoto)),
+          Expanded(flex: 3, child: buildImage(vendor.mainPhoto)),
           buildOverview(vendor),
           buildProperties(vendor),
           buildInquiry(),
         ]));
   }
 
-  Widget buildImage(BuildContext context, String photo) => Container(
-        child: Image.asset(photo,
-            fit: BoxFit.fill, width: MediaQuery.of(context).size.width - 80),
+  Widget buildImage(String photo) => Container(
+        child: Image.asset(photo, fit: BoxFit.cover),
       );
 }
 
