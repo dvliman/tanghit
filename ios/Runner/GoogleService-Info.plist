@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1079191401791-itvvi7ja830fp86c6mg8ers3bo46k0l7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1079191401791-itvvi7ja830fp86c6mg8ers3bo46k0l7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDbM82BEn3ThWeYAC-urYQy8_7NMNWC4y8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1079191401791</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.tanghit.tanghit</string>
+	<key>PROJECT_ID</key>
+	<string>tanghit-cd896</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tanghit-cd896.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1079191401791:ios:8bf7d817a1aa2c3ee84f8a</string>
+	<key>DATABASE_URL</key>
+	<string>https://tanghit-cd896.firebaseio.com</string>
+</dict>
+</plist>
