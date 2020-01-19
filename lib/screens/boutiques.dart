@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:tanghit/data/app_state.dart';
-import 'package:tanghit/widgets/boutique.dart';
+import 'package:tanghit/widgets/boutique_cell.dart';
 
 class BoutiquesScreen extends StatelessWidget {
   @override
@@ -19,7 +19,7 @@ class BoutiquesScreen extends StatelessWidget {
         body: ListView.builder(
             itemCount: model.vendors.length,
             itemBuilder: (context, index) {
-              return Boutique(model.vendors[index]);
+              return BoutiqueCell(model.vendors[index]);
             }));
   }
 }
