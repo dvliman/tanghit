@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tanghit/data/vendor.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BoutiqueDetail extends StatelessWidget {
   final Vendor vendor;
@@ -59,20 +60,26 @@ Widget buildProperties(Vendor vendor) {
       children: [
         // TODO: if value null, dont make row
         buildProperty("Category", maybeEmpty(vendor.category.toString())),
-        buildProperty("Email", maybeEmpty(vendor.email)),
-        buildProperty("Phone", maybeEmpty(vendor.phone)),
-        buildProperty("Homepage", maybeEmpty(vendor.homepage)),
-        buildProperty("Address", vendor.address),
+        buildProperty("Email", maybeEmpty(vendor.email), () async => launch("mailto:${vendor.email}")),
+        buildProperty("Phone", maybeEmpty(vendor.phone), () async => launch("tel://${vendor.phone}") ),
+        buildProperty("Homepage", maybeEmpty(vendor.homepage), () async => launch(vendor.homepage)),
+        buildProperty("Address", vendor.address, () => print(vendor.address)),
       ],
     ),
   );
 }
 
-Padding buildProperty(String prop, String value) {
+Padding buildProperty(String prop, String value, [Function onClick]) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Row(
-        children: [Expanded(child: Text(prop)), Expanded(child: Text(value))]),
+        children: [
+          Expanded(child: Text(prop)),
+          Expanded(child:
+                GestureDetector( onTap: () { if (onClick != null) onClick(); }, child: Text(value) )
+          )
+        ]
+    ),
   );
 }
 
