@@ -16,60 +16,86 @@ class BoutiqueDetail extends StatelessWidget {
             onPressed: () {},
           )
         ]),
-        body: Column(children: [
-          Expanded(flex: 3, child: buildImage(vendor.mainPhoto)),
-          buildOverview(vendor),
-          buildProperties(vendor),
-          buildInquiry(),
-        ]));
+        body: SingleChildScrollView(
+            child: Padding(
+          padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 8.0),
+          child: Column(children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 8.0),
+              child: buildImage(vendor.mainPhoto),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("Overview",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            ),
+            Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(vendor.description)),
+            buildProperties(vendor),
+            buildInquiry(),
+          ]),
+        )));
   }
 
-  Widget buildImage(String photo) => Container(
-        child: Image.asset(photo, fit: BoxFit.cover),
-      );
+  Widget buildImage(String photo) {
+    return Container(
+      child: Image.asset(photo, fit: BoxFit.fitWidth),
+    );
+  }
 }
 
-ListTile buildOverview(Vendor vendor) => ListTile(
-    title: Text("Overview",
-        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-    subtitle: Text(vendor.description));
+ListTile buildOverview(Vendor vendor) {
+  return ListTile(
+      title: Text("Overview",
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+      subtitle: Text(vendor.description));
+}
 
-Widget buildProperties(Vendor vendor) => Container(
-      decoration: BoxDecoration(border: Border.all(color: Color(0xffb0b0b0))),
-      padding: const EdgeInsets.all(8),
-      child: Table(
-        children: [
-          // TODO: if value null, dont make row
-          buildProperty("Category", maybeEmpty(vendor.category.toString())),
-          buildProperty("Email", maybeEmpty(vendor.email)),
-          buildProperty("Phone", maybeEmpty(vendor.phone)),
-          buildProperty("Homepage", maybeEmpty(vendor.homepage)),
-          buildProperty("Address", vendor.address),
-        ],
-      ),
-    );
-
-TableRow buildProperty(String prop, String value) => TableRow(children: [
-      TableCell(child: Text(prop)),
-      TableCell(child: Text(value, textAlign: TextAlign.end)),
-    ]);
-
-Widget buildInquiry() => Row(
+Widget buildProperties(Vendor vendor) {
+  return Container(
+    padding: const EdgeInsets.all(8),
+    child: Column(
       children: [
-        Expanded(
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.black,
-            ),
-            child: FlatButton(
-                onPressed: () {},
-                child: Text(
-                  "Send inquiry",
-                  style: TextStyle(color: Colors.white),
-                )),
-          ),
-        ),
+        // TODO: if value null, dont make row
+        buildProperty("Category", maybeEmpty(vendor.category.toString())),
+        buildProperty("Email", maybeEmpty(vendor.email)),
+        buildProperty("Phone", maybeEmpty(vendor.phone)),
+        buildProperty("Homepage", maybeEmpty(vendor.homepage)),
+        buildProperty("Address", vendor.address),
       ],
-    );
+    ),
+  );
+}
 
-String maybeEmpty(String x) => x != null ? x : "";
+Padding buildProperty(String prop, String value) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Row(
+        children: [Expanded(child: Text(prop)), Expanded(child: Text(value))]),
+  );
+}
+
+Widget buildInquiry() {
+  return Row(
+    children: [
+      Expanded(
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.black,
+          ),
+          child: FlatButton(
+              onPressed: () {},
+              child: Text(
+                "Send inquiry",
+                style: TextStyle(color: Colors.white),
+              )),
+        ),
+      ),
+    ],
+  );
+}
+
+String maybeEmpty(String x) {
+  return x != null ? x : "";
+}
