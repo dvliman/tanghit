@@ -25,8 +25,8 @@ class BoutiqueCell extends StatelessWidget {
           child: Container(
             child: Row(
               children: <Widget>[
-                Flexible(child: boutiqueImage(vendor)),
-                boutiqueDescription(vendor, 100),
+                Flexible(child: BoutiqueImage(vendor)),
+                BoutiqueDescription(vendor, 100),
               ],
             ),
           ),
@@ -35,7 +35,7 @@ class BoutiqueCell extends StatelessWidget {
     );
   }
 
-  Widget boutiqueImage(Vendor vendor) => ClipRRect(
+  Widget BoutiqueImage(Vendor vendor) => ClipRRect(
         child: FadeInImage(
           placeholder: AssetImage(vendor.mainPhoto),
           image: AssetImage(vendor.mainPhoto),
@@ -45,7 +45,7 @@ class BoutiqueCell extends StatelessWidget {
         ),
       );
 
-  Widget boutiqueDescription(Vendor vendor, double height) => Expanded(
+  Widget BoutiqueDescription(Vendor vendor, double height) => Expanded(
         child: Container(
           height: height,
           padding: EdgeInsets.symmetric(
