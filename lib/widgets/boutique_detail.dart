@@ -89,7 +89,7 @@ Padding buildProperty(String prop, String value, [Function onClick]) {
   );
 }
 
-Widget buildInquiry(BuildContext context) {
+Widget buildInquiry(BuildContext context) { // TODO: takes in vendor object? mailto:<email>?subject=<vendor-id-title>
   return Row(
     children: [
       Expanded(
