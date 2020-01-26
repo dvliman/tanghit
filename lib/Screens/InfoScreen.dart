@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tanghit/widgets/info_sheet.dart';
+import 'package:tanghit/Widgets/InfoSheet.dart';
 
 class InfoScreen extends StatelessWidget {
   @override

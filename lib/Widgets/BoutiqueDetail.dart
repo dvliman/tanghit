@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tanghit/data/vendor.dart';
-import 'package:tanghit/widgets/info_sheet.dart';
+import 'package:tanghit/Data/Vendor.dart';
+import 'package:tanghit/Widgets/InfoSheet.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share/share.dart';
 import 'dart:io' show Platform;

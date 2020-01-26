@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tanghit/screens/boutiques.dart';
-import 'package:tanghit/screens/info.dart';
+import 'package:tanghit/Screens/BoutiquesScreen.dart';
+import 'package:tanghit/Screens/InfoScreen.dart';
 
 class HomeTab extends StatefulWidget {
   HomeTab({Key key}) : super(key: key);

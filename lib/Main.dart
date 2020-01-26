@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:tanghit/data/app_state.dart';
-import 'package:tanghit/navigations/home_tab.dart';
+import 'package:tanghit/Data/AppState.dart';
+import 'package:tanghit/Navigations/HomeTab.dart';
 
-void main() =>
-    runApp(ScopedModel<AppState>(
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ScopedModel<AppState>(
         model: AppState(),
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -19,4 +23,7 @@ void main() =>
             bottomAppBarColor: const Color(0xff22202f),
           ),
         )
-    ));
+    );
+  }
+}
+
