@@ -4,6 +4,7 @@ import 'package:tanghit/data/vendor.dart';
 import 'package:tanghit/screens/info.dart';
 import 'package:tanghit/widgets/info_sheet.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:share/share.dart';
 
 class BoutiqueDetail extends StatelessWidget {
   final Vendor vendor;
@@ -16,7 +17,11 @@ class BoutiqueDetail extends StatelessWidget {
         appBar: AppBar(title: Text(vendor.name), actions: <Widget>[
           IconButton(
             icon: Icon(Icons.send),
-            onPressed: () {},
+            onPressed: () => {
+              // TODO: learn about deeplink to boutique-detail page
+              // if app deeplinked isn't installed then go to app store / google play
+              Share.share("some-text", subject: "some-subject")
+            },
           )
         ]),
         body: SingleChildScrollView(
