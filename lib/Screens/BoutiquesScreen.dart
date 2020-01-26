@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:tanghit/data/app_state.dart';
-import 'package:tanghit/widgets/boutique_cell.dart';
+import 'package:tanghit/Data/AppState.dart';
+import 'package:tanghit/Widgets/BoutiqueCell.dart';
 
 class BoutiquesScreen extends StatelessWidget {
   @override
