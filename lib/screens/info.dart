@@ -1,6 +1,5 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tanghit/widgets/info_sheet.dart';
 
 class InfoScreen extends StatelessWidget {
   @override
@@ -9,25 +8,6 @@ class InfoScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text("Info"),
         ),
-        body: ListView(
-          children: [
-            ListTile(
-                title: Text("Support Center")
-            ),
-            InkWell(
-              child: ListTile(
-                leading: Icon(Icons.call),
-                title: Text("Call: (714) 253 2851")
-              )
-            ),
-            InkWell(
-              child: ListTile(
-                leading: Icon(Icons.mail),
-                title: Text("Email: support@tanghit.com")
-              )
-            ),
-          ]
-        )
-    );
+        body: InfoSheet());
   }
 }
