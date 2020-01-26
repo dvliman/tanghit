@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:tanghit/Data/Vendor.dart';
 import 'package:tanghit/Widgets/InfoSheet.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:share/share.dart';
+import 'dart:io' show Platform;
 
 class BoutiqueDetail extends StatelessWidget {
   final Vendor vendor;
@@ -15,7 +17,7 @@ class BoutiqueDetail extends StatelessWidget {
         appBar: AppBar(title: Text(vendor.name), actions: <Widget>[
           IconButton(
             icon: Icon(Icons.send),
-            onPressed: () {},
+            onPressed: () => {Share.share(_getShareText())},
           )
         ]),
         body: SingleChildScrollView(
@@ -44,6 +46,20 @@ class BoutiqueDetail extends StatelessWidget {
     return Container(
       child: Image.asset(photo, fit: BoxFit.fitWidth),
     );
+  }
+
+  String _getShareText() {
+    return "Checkout this app: ${_getDistributionUrl()}";
+  }
+
+  String _getDistributionUrl() {
+    // AndroidManifest.xml
+    if (Platform.isAndroid) {
+      return "https://play.google.com/store/apps/details?id=com.tanghit.tanghit";
+    }
+
+    // itunes connect, get app id
+    return "https://itunes.apple.com/us/app/<app-name>/<app-id>";
   }
 }
 
@@ -88,7 +104,8 @@ Padding buildProperty(String prop, String value, [Function onClick]) {
   );
 }
 
-Widget buildInquiry(BuildContext context) { // TODO: takes in vendor object? mailto:<email>?subject=<vendor-id-title>
+Widget buildInquiry(BuildContext context) {
+  // TODO: takes in vendor object? mailto:<email>?subject=<vendor-id-title>
   return Row(
     children: [
       Expanded(
