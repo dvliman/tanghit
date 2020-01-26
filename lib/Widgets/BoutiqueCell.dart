@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tanghit/data/vendor.dart';
-import 'package:tanghit/widgets/boutique_detail.dart';
+import 'package:tanghit/Data/Vendor.dart';
+import 'package:tanghit/Widgets/BoutiqueDetail.dart';
 
 class BoutiqueCell extends StatelessWidget {
   final Vendor vendor;
