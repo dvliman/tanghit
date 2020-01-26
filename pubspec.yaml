@@ -10,8 +10,9 @@ dependencies:
     sdk: flutter
   scoped_model: ^1.0.1
   cupertino_icons: ^0.1.2
-  firebase_core: ^0.4.0+9
+  firebase_database:
   url_launcher: ^5.4.1
+  share: ^0.6.3+5
 
 dev_dependencies:
   flutter_test:
