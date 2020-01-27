@@ -3,49 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:tanghit/Data/Vendor.dart';
 import 'package:tanghit/Widgets/InfoSheet.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:share/share.dart';
 import 'dart:io' show Platform;
 
 class BoutiqueDetail extends StatelessWidget {
-  final Vendor vendor;
-
   const BoutiqueDetail(this.vendor);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(title: Text(vendor.name), actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.send),
-            onPressed: () => {Share.share(_getShareText())},
-          )
-        ]),
-        body: SingleChildScrollView(
-            child: Padding(
-          padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 8.0),
-          child: Column(children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 8.0),
-              child: buildImage(vendor.mainPhoto),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("Overview",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            ),
-            Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(vendor.description)),
-            buildProperties(vendor),
-            buildInquiry(context),
-          ]),
-        )));
-  }
+  final Vendor vendor;
 
-  Widget buildImage(String photo) {
-    return Container(
-      child: Image.asset(photo, fit: BoxFit.fitWidth),
-    );
+  Widget buildImage(List<String> photos) {
+    return Carousel(photos: photos);
   }
 
   String _getShareText() {
@@ -60,6 +28,92 @@ class BoutiqueDetail extends StatelessWidget {
 
     // itunes connect, get app id
     return "https://itunes.apple.com/us/app/<app-name>/<app-id>";
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title: Text(vendor.name), actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.send),
+            onPressed: () => {Share.share(_getShareText())},
+          )
+        ]),
+        body: SingleChildScrollView(
+            child: Column(children: [
+              buildImage(vendor.photos),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("Overview",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              ),
+              Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text(vendor.description)),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: buildProperties(vendor)),
+              buildInquiry(context),
+            ])));
+  }
+}
+
+class Carousel extends StatefulWidget {
+  Carousel({Key key, this.photos}) : super(key: key);
+
+  final List<String> photos;
+
+  @override
+  _CarouselState createState() => _CarouselState();
+}
+
+class _CarouselState extends State<Carousel> {
+  bool fullScreen = false;
+
+  @override
+  Widget build(BuildContext context) {
+    var height = fullScreen ? MediaQuery.of(context).size.height : 400.0;
+    var viewportFraction = fullScreen ? 1.0 : 0.8;
+    var edgeInsets = EdgeInsets.symmetric(horizontal: fullScreen ? 0.0 : 5.0);
+    var color = fullScreen ? Colors.black : Colors.white;
+
+    return GestureDetector(
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 200),
+        height: height,
+        color: color,
+        curve: Curves.easeOut,
+        child: CarouselSlider(
+          height: height,
+          enlargeCenterPage: true,
+          enableInfiniteScroll: false,
+          viewportFraction: viewportFraction,
+          items: widget.photos.map((photo) {
+            return Builder(
+              builder: (BuildContext context) {
+                return Container(
+                    margin: edgeInsets,
+                    child: Image.network(photo, fit: BoxFit.fitWidth));
+              },
+            );
+          }).toList(),
+        ),
+      ),
+      onTap: () => {
+        setState(() {
+          fullScreen = !fullScreen;
+        })
+      },
+      onPanStart: (pan) => {
+        print("onPanStart")
+      },
+      onPanDown: (pan) => {
+        print("onPanDown")
+      },
+      onPanUpdate: (pan) => {
+        print("onPanUpdate")
+      },
+    );
   }
 }
 
