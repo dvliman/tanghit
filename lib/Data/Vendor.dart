@@ -40,8 +40,7 @@ class Vendor {
   final String description;
   List<String> tags;
   final String address;
-  double latitude;
-  double longitude;
+  final GeoPoint geopoint;
   final String phone;
   final String email;
   final String homepage;
@@ -60,47 +59,49 @@ class Vendor {
   final List<BusinessHour> businessHours;
   final String tagline;
   final String location;
+  final Timestamp created;
   bool internationalShipping;
 
-  Vendor(
-      {this.name,
-      this.description,
-      this.tags,
-      this.address,
-      this.latitude,
-      this.longitude,
-      this.phone,
-      this.email,
-      this.homepage,
-      this.socialMedia,
-      this.priceStatus,
-      this.priceRangeFrom,
-      this.priceRangeTo,
-      this.claimStatus,
-      this.faqs,
-      this.photos,
-      this.pricingPlanID,
-      this.businessHours,
-      this.tagline,
-      this.location,
-      this.internationalShipping});
+  Vendor({this.name,
+    this.description,
+    this.tags,
+    this.address,
+    this.geopoint,
+    this.phone,
+    this.email,
+    this.homepage,
+    this.socialMedia,
+    this.priceStatus,
+    this.priceRangeFrom,
+    this.priceRangeTo,
+    this.claimStatus,
+    this.faqs,
+    this.photos,
+    this.pricingPlanID,
+    this.businessHours,
+    this.tagline,
+    this.location,
+    this.created,
+    this.internationalShipping});
 
   factory Vendor.fromDocument(DocumentSnapshot doc) {
     return Vendor(
-      name: doc['name'],
-      description: doc['description'],
-      address: doc['address'],
-      phone: doc['phone'],
-      email: doc['email'],
-      homepage: doc['homepage'],
+      name: doc['name'] ?? "boutique-name",
+      description: doc['description'] ?? "boutique-description",
+      address: doc['address'] ?? "boutique-address",
+      phone: doc['phone'] ?? "boutique-phone",
+      email: doc['email'] ?? "boutique-email",
+      homepage: doc['homepage'] ?? "boutique-homepage",
       socialMedia: SocialMedia(
-        twitter: doc['socialMedia']['twitter'],
-        facebook: doc['socialMedia']['facebook'],
-        instagram: doc['socialMedia']['instagram'],
-        pinterest: doc['socialMedia']['pinterest'],
+        twitter: doc['socialMedia']['twitter'] ?? "tanghit",
+        facebook: doc['socialMedia']['facebook'] ?? "tanghit",
+        instagram: doc['socialMedia']['instagram'] ?? "tanghit",
+        pinterest: doc['socialMedia']['pinterest'] ?? "tanghit",
       ),
-      photos: List<String>.from(doc['photos']),
-      location: doc['location'],
+      photos: List<String>.from(doc['photos']) ?? [],
+      location: doc['location'] ?? "boutique-location",
+      geopoint: doc['geopoint'] ?? GeoPoint(34.052235, -118.243683), // location
+      created: doc['created'] ?? Timestamp.now(),
     );
   }
 
