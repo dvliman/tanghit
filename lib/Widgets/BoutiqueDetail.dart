@@ -130,7 +130,6 @@ Widget buildProperties(Vendor vendor) {
     child: Column(
       children: [
         // TODO: if value null, dont make row
-        buildProperty("Category", maybeEmpty(vendor.category.toString())),
         buildProperty("Email", maybeEmpty(vendor.email),
             () async => launch("mailto:${vendor.email}")),
         buildProperty("Phone", maybeEmpty(vendor.phone),

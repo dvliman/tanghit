@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:scoped_model/scoped_model.dart';
-import 'package:tanghit/Data/AppState.dart';
+import 'package:tanghit/Data/Vendor.dart';
 import 'package:tanghit/Widgets/BoutiqueCell.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class BoutiquesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final model = ScopedModel.of<AppState>(context, rebuildOnChange: true);
-
     return Scaffold(
         backgroundColor: Theme.of(context).backgroundColor,
         appBar: AppBar(title: Text("Boutiques"), actions: <Widget>[
@@ -16,10 +14,26 @@ class BoutiquesScreen extends StatelessWidget {
             onPressed: () {},
           )
         ]),
-        body: ListView.builder(
-            itemCount: model.vendors.length,
-            itemBuilder: (context, index) {
-              return BoutiqueCell(model.vendors[index]);
+        body: FutureBuilder(
+            future: getBoutiqueCells(),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) {
+                return Container(
+                    alignment: FractionalOffset.center,
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: CircularProgressIndicator());
+              } else {
+                return ListView(children: snapshot.data);
+              }
             }));
+  }
+
+  getBoutiqueCells() async {
+    final snapshot =
+        await Firestore.instance.collection("vendors").getDocuments();
+
+    return snapshot.documents
+        .map((doc) => BoutiqueCell(Vendor.fromDocument(doc)))
+        .toList();
   }
 }

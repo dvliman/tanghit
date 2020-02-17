@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FAQ {
   final String question;
@@ -34,15 +35,8 @@ class BusinessHour {
   BusinessHour({this.day, this.start, this.end});
 }
 
-enum Category {
-  boutique,
-  home_baker,
-}
-
-// listing?
 class Vendor {
   final String name;
-  Category category;
   final String description;
   List<String> tags;
   final String address;
@@ -70,7 +64,6 @@ class Vendor {
 
   Vendor(
       {this.name,
-      this.category,
       this.description,
       this.tags,
       this.address,
@@ -91,6 +84,25 @@ class Vendor {
       this.tagline,
       this.location,
       this.internationalShipping});
+
+  factory Vendor.fromDocument(DocumentSnapshot doc) {
+    return Vendor(
+      name: doc['name'],
+      description: doc['description'],
+      address: doc['address'],
+      phone: doc['phone'],
+      email: doc['email'],
+      homepage: doc['homepage'],
+      socialMedia: SocialMedia(
+        twitter: doc['socialMedia']['twitter'],
+        facebook: doc['socialMedia']['facebook'],
+        instagram: doc['socialMedia']['instagram'],
+        pinterest: doc['socialMedia']['pinterest'],
+      ),
+      photos: List<String>.from(doc['photos']),
+      location: doc['location'],
+    );
+  }
 
   String get mainPhoto => photos[0];
 }
