@@ -49,12 +49,7 @@ class BoutiquesScreenState extends State<BoutiquesScreen> {
     return Scaffold(
         key: scaffoldKey,
         backgroundColor: Theme.of(context).backgroundColor,
-        appBar: AppBar(title: Text("Boutiques"), actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {},
-          )
-        ]),
+        appBar: AppBar(title: Text("Boutiques")),
         body: RefreshIndicator(
             onRefresh: () async {
               _data.clear();
@@ -80,21 +75,16 @@ class BoutiquesScreenState extends State<BoutiquesScreen> {
   }
 
   Future<Null> _getData({int limit = 2}) async {
-    QuerySnapshot snapshot;
-    if (_lastDocument == null) {
-      snapshot = await Firestore.instance
-          .collection("vendors")
-          .orderBy("created", descending: true)
-          .limit(limit)
-          .getDocuments();
-    } else {
-      snapshot = await Firestore.instance
-          .collection("vendors")
-          .orderBy("created", descending: true)
-          .startAfterDocument(_lastDocument)
-          .limit(limit)
-          .getDocuments();
+    Query query = Firestore.instance
+        .collection("vendors")
+        .orderBy("created", descending: true)
+        .limit(limit);
+
+    if (_lastDocument != null) {
+      query = query.startAfterDocument(_lastDocument);
     }
+
+    QuerySnapshot snapshot = await query.getDocuments();
 
     if (snapshot != null && snapshot.documents.length > 0) {
       _lastDocument = snapshot.documents[snapshot.documents.length - 1];
