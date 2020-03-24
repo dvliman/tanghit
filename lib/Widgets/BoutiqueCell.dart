@@ -23,7 +23,7 @@ class BoutiqueCell extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
                 child: CircleAvatar(
                   radius: 20.0,
-                  backgroundImage: AssetImage(vendor.mainPhoto),
+                  backgroundImage: NetworkImage(vendor.mainPhoto),
                 ),
               ),
               Expanded(
@@ -52,8 +52,8 @@ class BoutiqueCell extends StatelessWidget {
                 aspectRatio: 4.0 / 3.0,
                 child: FadeInImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(vendor.mainPhoto),
-                  placeholder: AssetImage(vendor.mainPhoto),
+                  image: NetworkImage(vendor.mainPhoto),
+                  placeholder: NetworkImage(vendor.mainPhoto),
                 )),
           ],
         ));
