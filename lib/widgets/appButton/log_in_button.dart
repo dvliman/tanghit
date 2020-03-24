@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tanghit/services/screen_ratio.dart';
 import 'package:tanghit/widgets/loader.dart';
 
-import '../../services/screen_ratio.dart';
+
 const Color textcol = Color(0XFF1DA6AD);
 
 class LogInButton extends StatelessWidget {

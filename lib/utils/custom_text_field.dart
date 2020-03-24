@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tanghit/services/screen_ratio.dart';
+
 
 class CustomTextField extends StatefulWidget {
-  Function validatorFunction;
-  TextEditingController controller;
-  Function onSaved;
-  Function onTap;
-  Widget icon;
-  String labelText;
-  TextInputType keyboardType;
-  EdgeInsetsGeometry contentPadding;
-  String initialValue;
-  bool obscureText;
-  InputDecoration decoration;
-  double height;
-  double width;
-  List<TextInputFormatter> inputFormatters;
-  int maxLength;
-  Function(String) onChanged;
-  int maxLines;
-  TextStyle labelStyle;
-  bool autofocus;
-  TextStyle style;
+  final Function validatorFunction;
+  final TextEditingController controller;
+  final Function onSaved;
+  final Function onTap;
+  final Widget icon;
+  final String labelText;
+  final TextInputType keyboardType;
+  final EdgeInsetsGeometry contentPadding;
+  final String initialValue;
+  final bool obscureText;
+  final InputDecoration decoration;
+  final double height;
+  final double width;
+  final List<TextInputFormatter> inputFormatters;
+  final int maxLength;
+  final Function(String) onChanged;
+  final int maxLines;
+  final TextStyle labelStyle;
+  final bool autofocus;
+  final TextStyle style;
 
   CustomTextField(
       {@required this.onSaved,

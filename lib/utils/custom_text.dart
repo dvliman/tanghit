@@ -7,9 +7,7 @@ class CustomText extends StatelessWidget {
   final double fontSize;
   final String fontFamily;
   final FontWeight fontWeight;
-  TextAlign align = TextAlign.center;
-  int maxLines;
-  TextOverflow overFlow;
+  final TextAlign align;
   final double height;
 
   CustomText(
@@ -19,8 +17,6 @@ class CustomText extends StatelessWidget {
         this.fontFamily = Fonts.defaultFont,
         this.fontWeight = FontWeight.bold,
         this.align,
-        this.maxLines,
-        this.overFlow,
         this.height,
         Key key})
       : super(key: key);
@@ -30,8 +26,6 @@ class CustomText extends StatelessWidget {
     return Text(
       customText,
       textAlign: align,
-      overflow: overFlow ?? TextOverflow.clip,
-      maxLines: maxLines ?? 10,
       style: TextStyle(
           color: textColor,
           fontSize: fontSize,

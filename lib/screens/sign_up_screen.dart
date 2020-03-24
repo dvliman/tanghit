@@ -4,7 +4,6 @@ import 'package:tanghit/services/shared_pref_service.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tanghit/utils/custom_text.dart';
 import 'package:tanghit/utils/custom_text_field.dart';
-import 'package:tanghit/widgets/appButton/log_in_button.dart';
 import 'package:tanghit/widgets/appButton/sign_in_button.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:validators/validators.dart';
@@ -16,6 +15,7 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   final _formKey = GlobalKey<FormState>();
+  bool isValidated = false;
 
   @override
   void initState() {
@@ -37,11 +37,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
 
-    bool isValidated = false;
+
     ScreenRatio.setScreenRatio(
         currentScreenHeight: screenSize.height,
         currentScreenWidth: screenSize.width);
-    bool checkboxVal = false;
     return Scaffold(
       body: SafeArea(
         child: Container(

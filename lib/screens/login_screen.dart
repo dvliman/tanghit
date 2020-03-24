@@ -5,7 +5,6 @@ import 'package:tanghit/services/screen_ratio.dart';
 import 'package:tanghit/services/shared_pref_service.dart';
 import 'package:tanghit/utils/custom_text.dart';
 import 'package:tanghit/utils/custom_text_field.dart';
-import 'package:tanghit/widgets/appButton/log_in_button.dart';
 import 'package:tanghit/widgets/appButton/sign_in_button.dart';
 import 'package:validators/validators.dart';
 

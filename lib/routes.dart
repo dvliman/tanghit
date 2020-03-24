@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanghit/screens/login_screen.dart';
-import 'package:tanghit/screens/sign_up_screen.dart';
 import 'package:tanghit/utils/constants.dart';
-
-import 'screens/splash.dart';
 
 class Routes {
   var routes = <String, WidgetBuilder>{
