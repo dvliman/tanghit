@@ -30,9 +30,7 @@ class _SplashState extends State<Splash> {
         currentScreenWidth: screenSize.width);
     return Scaffold(
       body: Center(
-        child: Container(
-          child: Image.asset("assets/images/background.png")
-        ),
+        child: Container(child: Image.asset("assets/images/background.png")),
       ),
     );
   }

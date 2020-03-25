@@ -55,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       alignment: Alignment.centerLeft,
                       child: Padding(
                         padding:
-                        EdgeInsets.only(left: 30 * ScreenRatio.widthRatio),
+                            EdgeInsets.only(left: 30 * ScreenRatio.widthRatio),
                         child: CustomText(
                           customText: "Sign In",
                           textColor: Colors.teal,
@@ -84,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               onSaved: (v) {
                                 print(v);
                               },
-                              onTap: (){
+                              onTap: () {
                                 setState(() {
                                   _selected = false;
                                 });
@@ -112,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             CustomTextField(
                               style: TextStyle(color: Colors.black),
                               controller: passwordcontroller,
-                              onTap: (){
+                              onTap: () {
                                 setState(() {
                                   _selected = true;
                                 });
@@ -125,10 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               obscureText: true,
                               width: 315 * ScreenRatio.widthRatio,
                               height: 50 * ScreenRatio.heightRatio,
-
-
                               icon: Container(
-
                                 height: 24 * ScreenRatio.heightRatio,
                                 width: 24 * ScreenRatio.heightRatio,
                                 alignment: Alignment.center,
@@ -137,19 +134,19 @@ class _LoginScreenState extends State<LoginScreen> {
                                   height: 24 * ScreenRatio.heightRatio,
                                   width: 24 * ScreenRatio.heightRatio,
                                   fit: BoxFit.contain,
-                                  color: _selected ? Colors.orangeAccent : Colors.grey,
-
+                                  color: _selected
+                                      ? Colors.orangeAccent
+                                      : Colors.grey,
                                 ),
-
                               ),
                               validatorFunction: (value) {
                                 if (value.isEmpty) {
                                   return "Please enter some text";
                                 }
                                 var message =
-                                (!isAlphanumeric(value.toString()))
-                                    ? "Enter a valid password"
-                                    : null;
+                                    (!isAlphanumeric(value.toString()))
+                                        ? "Enter a valid password"
+                                        : null;
                                 setState(() {
                                   isValidated = true;
                                 });
@@ -160,7 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               height: 30.0 * ScreenRatio.heightRatio,
                             ),
                             SignInButton(
-                              bgColor: Colors.orangeAccent ,
+                              bgColor: Colors.orangeAccent,
                               onTapFunction: () {
                                 setState(() {
                                   _selected = false;
@@ -194,7 +191,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       style: TextStyle(
                                           color: Colors.teal,
                                           fontSize:
-                                          19 * ScreenRatio.widthRatio),
+                                              19 * ScreenRatio.widthRatio),
                                     ),
                                   ),
                                   SizedBox(

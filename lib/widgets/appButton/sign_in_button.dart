@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanghit/widgets/loader.dart';
 
-
 class SignInButton extends StatelessWidget {
   final String buttonText;
   final double width;
@@ -34,8 +33,7 @@ class SignInButton extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         color: bgColor,
-        borderRadius: BorderRadius.circular(
-            borderRadius ?? 40.0 ),
+        borderRadius: BorderRadius.circular(borderRadius ?? 40.0),
         border: Border.all(
             color: borderColor != null ? borderColor : bgColor, width: 1.5),
       ),
@@ -44,16 +42,16 @@ class SignInButton extends StatelessWidget {
         child: Center(
           child: !showLoader
               ? Text(
-            buttonText,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontWeight: FontWeight.normal,
-              color: textColor,
-              fontSize: textFontSize,
-            ),
-          )
+                  buttonText,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                    color: textColor,
+                    fontSize: textFontSize,
+                  ),
+                )
               : SizedBox(
-              child: Loader(), height: height - 10, width: height - 10),
+                  child: Loader(), height: height - 10, width: height - 10),
         ),
       ),
     );

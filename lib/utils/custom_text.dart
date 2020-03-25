@@ -12,13 +12,13 @@ class CustomText extends StatelessWidget {
 
   CustomText(
       {@required this.customText,
-        this.textColor = Colors.white,
-        this.fontSize = 19.0,
-        this.fontFamily = Fonts.defaultFont,
-        this.fontWeight = FontWeight.bold,
-        this.align,
-        this.height,
-        Key key})
+      this.textColor = Colors.white,
+      this.fontSize = 19.0,
+      this.fontFamily = Fonts.defaultFont,
+      this.fontWeight = FontWeight.bold,
+      this.align,
+      this.height,
+      Key key})
       : super(key: key);
 
   @override

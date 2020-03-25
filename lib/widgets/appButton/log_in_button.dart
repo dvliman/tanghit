@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanghit/widgets/loader.dart';
 
-
 const Color textcol = Color(0XFF1DA6AD);
 
 class LogInButton extends StatelessWidget {
@@ -19,7 +18,7 @@ class LogInButton extends StatelessWidget {
   LogInButton({
     this.buttonText = "Log In",
     this.width = 146,
-    this.height =48,
+    this.height = 48,
     this.bgColor = Colors.white,
     this.textColor = textcol,
     this.textFontSize = 22,
@@ -36,8 +35,7 @@ class LogInButton extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         color: bgColor,
-        borderRadius: BorderRadius.circular(
-            borderRadius ?? 40.0 ),
+        borderRadius: BorderRadius.circular(borderRadius ?? 40.0),
         border: Border.all(
             color: borderColor != null ? borderColor : bgColor, width: 1.5),
       ),
@@ -46,16 +44,16 @@ class LogInButton extends StatelessWidget {
         child: Center(
           child: !showLoader
               ? Text(
-            buttonText,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontWeight: FontWeight.normal,
-              color: textColor,
-              fontSize: textFontSize,
-            ),
-          )
+                  buttonText,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                    color: textColor,
+                    fontSize: textFontSize,
+                  ),
+                )
               : SizedBox(
-              child: Loader(), height: height - 10, width: height - 10),
+                  child: Loader(), height: height - 10, width: height - 10),
         ),
       ),
     );

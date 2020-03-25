@@ -37,7 +37,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
 
-
     ScreenRatio.setScreenRatio(
         currentScreenHeight: screenSize.height,
         currentScreenWidth: screenSize.width);
@@ -56,7 +55,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       alignment: Alignment.centerLeft,
                       child: Padding(
                         padding:
-                        EdgeInsets.only(left: 30 * ScreenRatio.widthRatio),
+                            EdgeInsets.only(left: 30 * ScreenRatio.widthRatio),
                         child: CustomText(
                           customText: "Create an Account",
                           textColor: Colors.teal,
@@ -193,7 +192,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           height: 30.0 * ScreenRatio.heightRatio,
                         ),
                         SignInButton(
-                          bgColor: Colors.orangeAccent ,
+                          bgColor: Colors.orangeAccent,
                           onTapFunction: () {
                             if (_formKey.currentState.validate()) {
                               Scaffold.of(context).showSnackBar(
@@ -221,7 +220,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               SizedBox(
                                 width: 30.0 * ScreenRatio.widthRatio,
                               ),
-
                               Text(
                                 "Privacy Policy",
                                 style: TextStyle(

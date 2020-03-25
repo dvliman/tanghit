@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
 class CustomTextField extends StatefulWidget {
   final Function validatorFunction;
   final TextEditingController controller;
@@ -33,10 +32,10 @@ class CustomTextField extends StatefulWidget {
       this.width = 60,
       this.validatorFunction,
       this.contentPadding,
-        this.decoration,
+      this.decoration,
       this.initialValue,
       this.inputFormatters,
-        this.onTap,
+      this.onTap,
       this.obscureText = false,
       this.maxLength,
       this.onChanged,
@@ -73,8 +72,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         decoration: new InputDecoration(
           labelText: widget.labelText,
           labelStyle: TextStyle(
-              color: myFocusNode.hasFocus ? Colors.blue : Colors.black
-          ),
+              color: myFocusNode.hasFocus ? Colors.blue : Colors.black),
           contentPadding: widget.contentPadding,
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(40.0)),
@@ -85,7 +83,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
             borderSide: BorderSide(color: Colors.grey, width: 1),
           ),
           border: OutlineInputBorder(
-
             borderRadius: BorderRadius.all(Radius.circular(40.0)),
             borderSide: BorderSide(color: Colors.grey, width: 1),
           ),
