@@ -34,7 +34,7 @@ class _FormScreenState extends State<FormScreen> {
                           Column(
                             children: <Widget>[
                               SizedBox(height: 100.0),
-                              FormTitle(title: widget.title,),
+                              FormTitle(title: widget.title),
                               SizedBox(height: 40.0),
                             ],
                           ),
@@ -56,16 +56,12 @@ class _FormScreenState extends State<FormScreen> {
 class FormTitle extends StatelessWidget {
   const FormTitle({Key key, this.title}) : super(key: key);
 
-  @required final String title;
+  @required
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Divider(
-        thickness: 5.0,
-        color: Colors.red,
-        endIndent: 300,
-      ),
       Align(
           alignment: Alignment.topLeft,
           child: CustomText(
@@ -74,6 +70,17 @@ class FormTitle extends StatelessWidget {
             fontSize: 31,
             align: TextAlign.left,
           )),
+      SizedBox(height: 5),
+      Align(
+        alignment: Alignment.bottomLeft,
+        child: SizedBox(
+          width: 60.0,
+          height: 5.0,
+          child: const DecoratedBox(
+            decoration: const BoxDecoration(color: Colors.red),
+          ),
+        ),
+      ),
     ]);
   }
 }
