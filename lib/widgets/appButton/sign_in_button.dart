@@ -3,8 +3,6 @@ import 'package:tanghit/widgets/loader.dart';
 
 class SignInButton extends StatelessWidget {
   final String buttonText;
-  final double width;
-  final double height;
   final Color bgColor;
   final Color textColor;
   final double textFontSize;
@@ -15,8 +13,6 @@ class SignInButton extends StatelessWidget {
 
   SignInButton({
     @required this.buttonText,
-    this.width,
-    @required this.height,
     @required this.bgColor,
     @required this.textColor,
     @required this.textFontSize,
@@ -29,8 +25,7 @@ class SignInButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height,
-      width: width,
+      padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: bgColor,
         borderRadius: BorderRadius.circular(borderRadius ?? 40.0),
@@ -50,8 +45,7 @@ class SignInButton extends StatelessWidget {
                     fontSize: textFontSize,
                   ),
                 )
-              : SizedBox(
-                  child: Loader(), height: height - 10, width: height - 10),
+              : SizedBox(child: Loader()),
         ),
       ),
     );

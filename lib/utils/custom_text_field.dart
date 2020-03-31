@@ -54,8 +54,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: widget.height,
-      width: widget.width,
       child: TextFormField(
         autofocus: widget.autofocus ?? false,
         maxLines: widget.maxLines ?? 1,
