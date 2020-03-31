@@ -35,6 +35,7 @@ jobs:
         with:
           channel: 'beta'
       - run: flutter pub get
+      - run: xcrun instruments -s
       - run: open -a Simulator
       - run: xcrun simctl boot "${{ matrix.device }}"
       - run: flutter test --no-pub
