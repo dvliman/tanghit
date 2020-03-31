@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tanghit/screens/login_screen.dart';
+import 'package:tanghit/screens/sign_up_screen.dart';
 import 'package:tanghit/utils/constants.dart';
 
 class Routes {
@@ -11,7 +11,7 @@ class Routes {
     runApp(
       MaterialApp(
         routes: routes,
-        home: LoginScreen(),
+        home: SignUpScreen(),
         navigatorKey: rootNavigatorKey,
         debugShowCheckedModeBanner: false,
       ),
