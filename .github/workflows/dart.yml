@@ -1,11 +1,10 @@
 on: push
 jobs:
   test:
-    name: Test on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }} ${{ matrix.platform }}
+    name: Test on ${{ matrix.platform }}
+    runs-on: macos-latest
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
         platform: [ios, aot, apk]
     steps:
       - uses: actions/checkout@v1
