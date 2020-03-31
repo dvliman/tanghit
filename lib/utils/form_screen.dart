@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:tanghit/utils/custom_text.dart';
 
 class FormScreen extends StatefulWidget {
+  const FormScreen({
+    Key key,
+    this.children = const <Widget>[],
+    this.formKey,
+    this.title,
+  }) : super(key: key);
+
   final String title;
   final List<Widget> children;
   final GlobalKey formKey;
 
-  const FormScreen(
-      {Key key, this.title, this.formKey, this.children = const <Widget>[]})
-      : super(key: key);
-
+  @override
   _FormScreenState createState() => _FormScreenState();
 }
 
@@ -28,14 +32,14 @@ class _FormScreenState extends State<FormScreen> {
                 children: <Widget>[
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       child: ListView(
                         children: <Widget>[
                           Column(
                             children: <Widget>[
-                              SizedBox(height: 100.0),
+                              const SizedBox(height: 100.0),
                               FormTitle(title: widget.title),
-                              SizedBox(height: 40.0),
+                              const SizedBox(height: 40.0),
                             ],
                           ),
                           Column(children: widget.children)
@@ -70,14 +74,14 @@ class FormTitle extends StatelessWidget {
             fontSize: 31,
             align: TextAlign.left,
           )),
-      SizedBox(height: 5),
+      const SizedBox(height: 5),
       Align(
         alignment: Alignment.bottomLeft,
-        child: SizedBox(
+        child: const SizedBox(
           width: 60.0,
           height: 5.0,
-          child: const DecoratedBox(
-            decoration: const BoxDecoration(color: Colors.red),
+          child: DecoratedBox(
+            decoration: BoxDecoration(color: Colors.red),
           ),
         ),
       ),

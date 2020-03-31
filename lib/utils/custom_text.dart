@@ -2,14 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tanghit/utils/constants/font_constants.dart';
 
 class CustomText extends StatelessWidget {
-  final String customText;
-  final Color textColor;
-  final double fontSize;
-  final String fontFamily;
-  final FontWeight fontWeight;
-  final TextAlign align;
-  final double height;
-
   CustomText(
       {@required this.customText,
       this.textColor = Colors.white,
@@ -20,6 +12,14 @@ class CustomText extends StatelessWidget {
       this.height,
       Key key})
       : super(key: key);
+
+  final String customText;
+  final Color textColor;
+  final double fontSize;
+  final String fontFamily;
+  final FontWeight fontWeight;
+  final TextAlign align;
+  final double height;
 
   @override
   Widget build(BuildContext context) {

@@ -3,10 +3,6 @@ import 'package:tanghit/screens/sign_up_screen.dart';
 import 'package:tanghit/utils/constants.dart';
 
 class Routes {
-  var routes = <String, WidgetBuilder>{
-    // "/login": (BuildContext context) => new LoginScreen(),
-  };
-
   Routes() {
     runApp(
       MaterialApp(
@@ -17,4 +13,8 @@ class Routes {
       ),
     );
   }
+
+  var routes = <String, WidgetBuilder>{
+    // "/login": (BuildContext context) => new LoginScreen(),
+  };
 }

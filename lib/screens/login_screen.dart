@@ -14,16 +14,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return FormScreen(title: "Login", 
-    formKey: _formKey,
-    children: <Widget>[
+    return FormScreen(title: 'Login', formKey: _formKey, children: <Widget>[
       EmailTextField(),
-      SizedBox(height: 30.0),
-      PasswordTextField(),
-      SizedBox(height: 30.0),
+      const SizedBox(height: 30.0),
+      const PasswordTextField(),
+      const SizedBox(height: 30.0),
       LoginButton(formKey: _formKey),
-      SizedBox(height: 30.0),
-      TermsOfUseRow()
+      const SizedBox(height: 30.0),
+      const TermsOfUseRow()
     ]);
   }
 }
@@ -44,13 +42,13 @@ class LoginButton extends StatelessWidget {
       onTapFunction: () {
         if (_formKey.currentState.validate()) {
           Scaffold.of(context)
-              .showSnackBar(SnackBar(content: Text("Processing data")));
+              .showSnackBar(const SnackBar(content: Text('Processing data')));
         } else {
-          Scaffold.of(context)
-              .showSnackBar(SnackBar(content: Text("Unauthorized access")));
+          Scaffold.of(context).showSnackBar(
+              const SnackBar(content: Text('Unauthorized access')));
         }
       },
-      buttonText: "SIGN IN",
+      buttonText: 'SIGN IN',
       textColor: Colors.white,
       textFontSize: 20.0,
     );
@@ -66,12 +64,12 @@ class TermsOfUseRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
       Container(
-        margin: EdgeInsets.only(right: 17.5),
-        child: Text("Terms of Use",
+        margin: const EdgeInsets.only(right: 17.5),
+        child: Text('Terms of Use',
             style: TextStyle(color: Colors.teal, fontSize: 19)),
       ),
-      SizedBox(height: 17.5),
-      Text("Privacy Policy",
+      const SizedBox(height: 17.5),
+      Text('Privacy Policy',
           style: TextStyle(color: Colors.teal, fontSize: 19)),
     ]);
   }
@@ -88,11 +86,11 @@ class PasswordTextField extends StatelessWidget {
         style: TextStyle(color: Colors.black),
         keyboardType: TextInputType.text,
         onSaved: (v) {},
-        labelText: "Password",
+        labelText: 'Password',
         obscureText: true,
         icon: Icon(Icons.lock),
         validatorFunction: (value) =>
-            value.isEmpty ? "Please enter some text" : null);
+            value.isEmpty ? 'Please enter some text' : null);
   }
 }
 
@@ -105,7 +103,7 @@ class EmailTextField extends StatelessWidget {
         style: TextStyle(color: Colors.black),
         keyboardType: TextInputType.text,
         onSaved: (v) {},
-        labelText: "Email",
+        labelText: 'Email',
         icon: Icon(Icons.lock),
         validatorFunction: (input) =>
             !EmailValidator.validate(input) ? 'Not a valid Email' : null);

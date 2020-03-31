@@ -1,4 +1,4 @@
-import 'package:tanghit/routes.dart';
+import 'package:tanghit/main_routes.dart';
 
 void main() {
   Routes();

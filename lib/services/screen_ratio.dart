@@ -9,7 +9,7 @@ class ScreenRatio {
   static double potraitPadding;
   static double landscapePadding;
 
-  static setScreenRatio(
+  static void setScreenRatio(
       {double currentScreenHeight, double currentScreenWidth}) {
     BuildContext context;
     Orientation orientation;
@@ -18,10 +18,10 @@ class ScreenRatio {
       context = rootNavigatorKey.currentContext;
       orientation = MediaQuery.of(context).orientation;
     } catch (e) {
-      print("error here");
+      // print('\(e) error here');
     }
 
-    print("hitting here =>  $orientation");
+    // print('hitting here =>  $orientation');
     if (orientation == Orientation.portrait) {
       screenheight = currentScreenHeight;
       screenwidth = currentScreenWidth;

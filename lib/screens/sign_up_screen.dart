@@ -15,18 +15,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return FormScreen(title: "Sign Up", formKey: _formKey, children: <Widget>[
-      NameTextField(),
-      SizedBox(height: 30.0),
+    return FormScreen(title: 'Sign Up', formKey: _formKey, children: <Widget>[
+      const NameTextField(),
+      const SizedBox(height: 30.0),
       EmailTextField(),
-      SizedBox(height: 30.0),
-      PhoneTextField(),
-      SizedBox(height: 30.0),
-      PasswordTextField(),
-      SizedBox(height: 30.0),
+      const SizedBox(height: 30.0),
+      const PhoneTextField(),
+      const SizedBox(height: 30.0),
+      const PasswordTextField(),
+      const SizedBox(height: 30.0),
       SignUpButton(formKey: _formKey),
-      SizedBox(height: 30.0),
-      TermsOfUseRow()
+      const SizedBox(height: 30.0),
+      const TermsOfUseRow()
     ]);
   }
 }
@@ -47,10 +47,10 @@ class SignUpButton extends StatelessWidget {
       onTapFunction: () {
         if (_formKey.currentState.validate()) {
           Scaffold.of(context)
-              .showSnackBar(SnackBar(content: Text("Processing data")));
+              .showSnackBar(const SnackBar(content: Text('Processing data')));
         }
       },
-      buttonText: "SIGN UP",
+      buttonText: 'SIGN UP',
       textColor: Colors.white,
       textFontSize: 20.0,
     );
@@ -67,16 +67,14 @@ class PhoneTextField extends StatelessWidget {
     return CustomTextField(
         style: TextStyle(color: Colors.black),
         keyboardType: TextInputType.text,
-        onSaved: (v) {
-          print(v);
-        },
-        labelText: "Phone",
+        onSaved: (v) {},
+        labelText: 'Phone',
         validatorFunction: (value) {
           if (value.isEmpty) {
-            return "Please enter some text";
+            return 'Please enter some text';
           }
           return (!isNumeric(value.toString()))
-              ? "Enter a valid mobile number"
+              ? 'Enter a valid mobile number'
               : null;
         },
         icon: Icon(Icons.phone_android));
@@ -93,15 +91,13 @@ class NameTextField extends StatelessWidget {
     return CustomTextField(
       style: TextStyle(color: Colors.black),
       keyboardType: TextInputType.text,
-      onSaved: (v) {
-        print(v);
-      },
-      labelText: "Name",
+      onSaved: (v) {},
+      labelText: 'Name',
       validatorFunction: (value) {
         if (value.isEmpty) {
-          return "Please enter some text";
+          return 'Please enter some text';
         }
-        return (!isAlpha(value.toString())) ? "Enter a valid name" : null;
+        return (!isAlpha(value.toString())) ? 'Enter a valid name' : null;
       },
       icon: Icon(Icons.person_outline),
     );
