@@ -9,11 +9,11 @@ jobs:
       - run:
           name: download flutter SDK
           command: |
-          if ! test -f "flutter_sdk.zip"; then 
-            git clone https://github.com/flutter/flutter.git -b stable
-          fi
-          export PATH="$PATH:`pwd`/flutter/bin"
-          flutter doctor
+            if ! test -f "flutter_sdk.zip"; then 
+              git clone https://github.com/flutter/flutter.git -b stable
+            fi
+            export PATH="$PATH:`pwd`/flutter/bin"
+            flutter doctor
           
       - run:
           name: Run Flutter doctor
