@@ -51,18 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     height: 100.0 * ScreenRatio.heightRatio,
                   ),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding:
-                        EdgeInsets.only(left: 30 * ScreenRatio.widthRatio),
-                        child: CustomText(
-                          customText: "Sign In",
-                          textColor: Colors.teal,
-                          fontSize: 31 * ScreenRatio.widthRatio,
-                          align: TextAlign.left,
-                        ),
-                      )),
+                  Heading(),
                   Divider(
                     thickness: 5.0 * ScreenRatio.heightRatio,
                     color: Colors.red,
@@ -125,10 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               obscureText: true,
                               width: 315 * ScreenRatio.widthRatio,
                               height: 50 * ScreenRatio.heightRatio,
-
-
                               icon: Container(
-
                                 height: 24 * ScreenRatio.heightRatio,
                                 width: 24 * ScreenRatio.heightRatio,
                                 alignment: Alignment.center,
@@ -138,9 +124,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   width: 24 * ScreenRatio.heightRatio,
                                   fit: BoxFit.contain,
                                   color: _selected ? Colors.orangeAccent : Colors.grey,
-
                                 ),
-
                               ),
                               validatorFunction: (value) {
                                 if (value.isEmpty) {
@@ -160,14 +144,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               height: 30.0 * ScreenRatio.heightRatio,
                             ),
                             SignInButton(
-                              bgColor: Colors.orangeAccent ,
+                              bgColor: Colors.amber ,
                               onTapFunction: () {
                                 setState(() {
                                   _selected = false;
                                 });
                                 if (_formKey.currentState.validate()) {
-                                  Scaffold.of(context).showSnackBar(SnackBar(
-                                      content: Text("Processing data")));
+                                  Navigator.of(context).pushNamed("/home");
                                 } else {
                                   Scaffold.of(context).showSnackBar(SnackBar(
                                       content: Text("Unauthorized access")));
@@ -182,31 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             SizedBox(
                               height: 30.0 * ScreenRatio.heightRatio,
                             ),
-                            Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Container(
-                                    margin: EdgeInsets.only(
-                                      right: 17.5 * ScreenRatio.widthRatio,
-                                    ),
-                                    child: Text(
-                                      "Terms of Use",
-                                      style: TextStyle(
-                                          color: Colors.teal,
-                                          fontSize:
-                                          19 * ScreenRatio.widthRatio),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 17.5 * ScreenRatio.widthRatio,
-                                  ),
-                                  Text(
-                                    "Privacy Policy",
-                                    style: TextStyle(
-                                        color: Colors.teal,
-                                        fontSize: 19 * ScreenRatio.widthRatio),
-                                  ),
-                                ])
+                            SuperLinks()
                           ],
                         ),
                       ],
@@ -219,5 +178,63 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+}
+
+class SuperLinks extends StatelessWidget {
+  const SuperLinks({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(
+              right: 17.5 * ScreenRatio.widthRatio,
+            ),
+            child: Text(
+              "Terms of Use",
+              style: TextStyle(
+                  color: Colors.redAccent,
+                  fontSize:
+                  19 * ScreenRatio.widthRatio),
+            ),
+          ),
+          SizedBox(
+            height: 17.5 * ScreenRatio.widthRatio,
+          ),
+          Text(
+            "Privacy Policy",
+            style: TextStyle(
+                color: Colors.redAccent,
+                fontSize: 19 * ScreenRatio.widthRatio),
+          ),
+        ]
+    );
+  }
+}
+
+class Heading extends StatelessWidget {
+  const Heading({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+        alignment: Alignment.centerLeft,
+        child: Padding(
+          padding:
+          EdgeInsets.only(left: 30 * ScreenRatio.widthRatio),
+          child: CustomText(
+            customText: "Sign In",
+            textColor: Colors.amber,
+            fontSize: 31 * ScreenRatio.widthRatio,
+            align: TextAlign.left,
+          ),
+        ));
   }
 }

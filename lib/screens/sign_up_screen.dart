@@ -59,7 +59,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         EdgeInsets.only(left: 30 * ScreenRatio.widthRatio),
                         child: CustomText(
                           customText: "Create an Account",
-                          textColor: Colors.teal,
+                          textColor: Colors.amber,
                           fontSize: 28 * ScreenRatio.widthRatio,
                           align: TextAlign.left,
                         ),
@@ -96,10 +96,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             var message = (!isAlpha(value.toString()))
                                 ? "Enter a valid name"
                                 : null;
-                            setState(() {
-                              isValidated = true;
-                            });
-
                             return message;
                           },
                           icon: Icon(Icons.person_outline),
@@ -125,9 +121,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             String message = !EmailValidator.validate(value)
                                 ? "Not a valid email"
                                 : null;
-                            setState(() {
-                              isValidated = true;
-                            });
                             return message;
                           },
                         ),
@@ -151,10 +144,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               var message = (!isNumeric(value.toString()))
                                   ? "Enter a valid mobile number"
                                   : null;
-                              setState(() {
-                                isValidated = true;
-                              });
-
                               return message;
                             },
                             icon: Icon(Icons.phone_android)),
@@ -183,9 +172,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             var message = (!isAlphanumeric(value.toString()))
                                 ? "Enter a valid password"
                                 : null;
-                            setState(() {
-                              isValidated = true;
-                            });
                             return message;
                           },
                         ),
@@ -193,11 +179,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           height: 30.0 * ScreenRatio.heightRatio,
                         ),
                         SignInButton(
-                          bgColor: Colors.orangeAccent ,
+                          bgColor: Colors.amber ,
                           onTapFunction: () {
                             if (_formKey.currentState.validate()) {
-                              Scaffold.of(context).showSnackBar(
-                                  SnackBar(content: Text("Processing data")));
+                              Navigator.of(context).pushNamed("/logInScreen");
                             }
                           },
                           width: 315 * ScreenRatio.widthRatio,
@@ -215,7 +200,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Text(
                                 "Terms of Use",
                                 style: TextStyle(
-                                    color: Colors.teal,
+                                    color: Colors.redAccent,
                                     fontSize: 13 * ScreenRatio.heightRatio),
                               ),
                               SizedBox(
@@ -225,7 +210,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Text(
                                 "Privacy Policy",
                                 style: TextStyle(
-                                    color: Colors.teal,
+                                    color: Colors.redAccent,
                                     fontSize: 13 * ScreenRatio.heightRatio),
                               ),
                             ])
