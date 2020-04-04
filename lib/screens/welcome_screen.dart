@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tanghit/services/screen_ratio.dart';
 import 'package:tanghit/services/shared_pref_service.dart';
-import 'package:tanghit/widgets/appButton/log_in_button.dart';
+import 'package:tanghit/widgets/appButton/sign_in_button.dart';
 import 'package:tanghit/widgets/customText/custom_text.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -48,38 +48,37 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           SizedBox(
             height: 30.0 * ScreenRatio.heightRatio,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              LogInButton(
-                width: 146 * ScreenRatio.widthRatio,
-                height: 48 * ScreenRatio.heightRatio,
-                buttonText: CustomText(
-                  customText: "Log in",
-                  textColor: Colors.amber,
-                ),
-                textFontSize: 22 * ScreenRatio.heightRatio,
-                onTapFunction: (){
-                  Navigator.pushNamed(context, "/logInScreen");
-                },
-              ),
-              SizedBox(width: 23 * ScreenRatio.widthRatio,),
-              LogInButton(
-                width: 146 * ScreenRatio.widthRatio,
-                height: 48 * ScreenRatio.heightRatio,
-                buttonText: CustomText(
-                  customText: "Sign Up",
-                  textColor: Colors.amber,
-                ),
-                textFontSize: 22 * ScreenRatio.heightRatio,
-                onTapFunction: (){
-                  Navigator.pushNamed(context, "/signUpScreen");
-                },
-              )
-            ],
-          )
         ],
       ),
+    );
+  }
+}
+
+class LogInButton extends StatelessWidget {
+  const LogInButton({
+    Key key,
+    @required GlobalKey<FormState> formKey,
+  })  : _formKey = formKey,
+        super(key: key);
+
+  final GlobalKey<FormState> _formKey;
+
+  @override
+  Widget build(BuildContext context) {
+    return SignInButton(
+      bgColor: Colors.orangeAccent,
+      onTapFunction: () {
+        if (_formKey.currentState.validate()) {
+          Scaffold.of(context)
+              .showSnackBar(const SnackBar(content: Text('Processing data')));
+        } else {
+          Scaffold.of(context).showSnackBar(
+              const SnackBar(content: Text('Unauthorized access')));
+        }
+      },
+      buttonText: 'SIGN IN',
+      textColor: Colors.white,
+      textFontSize: 20.0,
     );
   }
 }

@@ -6,8 +6,7 @@ class SharedPrefService {
   static Future<dynamic> setSharedPreference() async {
 //    Completer c = Completer();
 
-    if (SharedPrefService.prefs == null)
-      SharedPrefService.prefs = await SharedPreferences.getInstance();
-    prefs.setBool("initialised", true);
+    SharedPrefService.prefs ??= await SharedPreferences.getInstance();
+    await prefs.setBool('initialised', true);
   }
 }
