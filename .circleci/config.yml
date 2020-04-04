@@ -1,19 +1,16 @@
 version: 2
 jobs:
   build:    
-    macos:
-      xcode: "11.4.0"
+    docker:
+      - image: cirrusci/flutter
+
     steps:
       - checkout
 
       - run:
-          name: download flutter SDK
+          name: update flutter SDK
           command: |
-            if ! test -f "flutter_sdk.zip"; then 
-              git clone https://github.com/flutter/flutter.git -b stable
-            fi
-            export PATH="$PATH:`pwd`/flutter/bin"
-            flutter doctor
+            flutter upgrade
           
       - run:
           name: Run Flutter doctor
