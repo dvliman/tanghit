@@ -10,11 +10,11 @@ jobs:
       - run:
           name: update flutter SDK
           command: |
+            cd /home/cirrus/sdks/flutter
+            git fetch
+            flutter channel stable
             flutter upgrade
-          
-      - run:
-          name: Run Flutter doctor
-          command: cd ..; flutter doctor
+            flutter doctor
 
       - run: flutter pub get
       - run: flutter build aot -t "lib/main.dart"
