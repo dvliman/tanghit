@@ -1,8 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
 class CustomTextField extends StatefulWidget {
+  CustomTextField(
+      {@required this.onSaved,
+      this.controller,
+      this.icon,
+      this.labelText,
+      this.height = 315,
+      this.width = 60,
+      this.validatorFunction,
+      this.contentPadding,
+      this.decoration,
+      this.initialValue,
+      this.inputFormatters,
+      this.onTap,
+      this.obscureText = false,
+      this.maxLength,
+      this.onChanged,
+      this.keyboardType,
+      this.maxLines,
+      this.labelStyle,
+      this.autofocus,
+      this.style});
+
   final Function validatorFunction;
   final TextEditingController controller;
   final Function onSaved;
@@ -24,39 +45,15 @@ class CustomTextField extends StatefulWidget {
   final bool autofocus;
   final TextStyle style;
 
-  CustomTextField(
-      {@required this.onSaved,
-      this.controller,
-      this.icon,
-      this.labelText,
-      this.height = 315,
-      this.width = 60,
-      this.validatorFunction,
-      this.contentPadding,
-        this.decoration,
-      this.initialValue,
-      this.inputFormatters,
-        this.onTap,
-      this.obscureText = false,
-      this.maxLength,
-      this.onChanged,
-      this.keyboardType,
-      this.maxLines,
-      this.labelStyle,
-      this.autofocus,
-      this.style});
-
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
-  FocusNode myFocusNode = new FocusNode();
+  FocusNode myFocusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: widget.height,
-      width: widget.width,
       child: TextFormField(
         autofocus: widget.autofocus ?? false,
         maxLines: widget.maxLines ?? 1,
@@ -70,23 +67,21 @@ class _CustomTextFieldState extends State<CustomTextField> {
         keyboardType: widget.keyboardType,
         onSaved: widget.onSaved,
         validator: widget.validatorFunction,
-        decoration: new InputDecoration(
+        decoration: InputDecoration(
           labelText: widget.labelText,
           labelStyle: TextStyle(
-              color: myFocusNode.hasFocus ? Colors.blue : Colors.black
-          ),
+              color: myFocusNode.hasFocus ? Colors.blue : Colors.black),
           contentPadding: widget.contentPadding,
           errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(40.0)),
+            borderRadius: const BorderRadius.all(Radius.circular(40.0)),
             borderSide: BorderSide(color: Colors.grey, width: 1),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(40.0)),
+            borderRadius: const BorderRadius.all(Radius.circular(40.0)),
             borderSide: BorderSide(color: Colors.grey, width: 1),
           ),
           border: OutlineInputBorder(
-
-            borderRadius: BorderRadius.all(Radius.circular(40.0)),
+            borderRadius: const BorderRadius.all(Radius.circular(40.0)),
             borderSide: BorderSide(color: Colors.grey, width: 1),
           ),
           prefixIcon: Icon(Icons.mail_outline),

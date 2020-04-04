@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:    
+    docker:
+      - image: cirrusci/flutter
+
+    steps:
+      - checkout
+
+      - run:
+          name: update flutter SDK
+          command: |
+            cd /home/cirrus/sdks/flutter
+            git fetch
+            flutter channel stable
+            flutter upgrade
+            flutter doctor
+
+      - run: flutter pub get
+      - run: flutter build aot -t "lib/main.dart"
+      - run: flutter test --no-pub
+      - run: flutter analyze --no-pub
+      - run: flutter format . --set-exit-if-changed --fix
+ 
+      - run:
+          name: Build the Android version
+          command: flutter build apk 
+
+      - store_artifacts:
+          path: build/app/outputs/apk/release/app-release.apk

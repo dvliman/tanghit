@@ -18,21 +18,15 @@ class _SplashState extends State<Splash> {
     initialisation();
   }
 
-  initialisation() async {
+  void initialisation() async {
     await SharedPrefService.setSharedPreference();
   }
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
-    ScreenRatio.setScreenRatio(
-        currentScreenHeight: screenSize.height,
-        currentScreenWidth: screenSize.width);
     return Scaffold(
       body: Center(
-        child: Container(
-          child: Image.asset("assets/images/background.png")
-        ),
+        child: Container(child: Image.asset('assets/images/background.png')),
       ),
     );
   }

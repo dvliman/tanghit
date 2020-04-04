@@ -7,10 +7,10 @@ import 'package:tanghit/utils/constants.dart';
 
 class Routes {
   var routes = <String, WidgetBuilder>{
-    "/": (BuildContext context) => new WelcomeScreen(),
-    "/logInScreen": (BuildContext context) => new LoginScreen(),
-    "/signUpScreen": (BuildContext context) => new SignUpScreen(),
-    "/home": (BuildContext context) => new TempBottomNavigation(),
+    "/": (BuildContext context) =>  WelcomeScreen(),
+    "/logInScreen": (BuildContext context) =>  LoginScreen(),
+    "/signUpScreen": (BuildContext context) =>  SignUpScreen(),
+    "/home": (BuildContext context) =>  TempBottomNavigation(),
   };
 
   Routes() {

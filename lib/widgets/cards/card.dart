@@ -74,9 +74,9 @@ class _DashboardCardState extends State<DashboardCard> {
                       height: 500 * hf,
                       width: screenSize.width,
                       alignment: Alignment.center,
-                      decoration: new BoxDecoration(
-                        image: new DecorationImage(
-                          image: new AssetImage(i),
+                      decoration:  BoxDecoration(
+                        image:  DecorationImage(
+                          image:  AssetImage(i),
                           fit: BoxFit.cover,
                         ),
                       ),

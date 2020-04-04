@@ -8,5 +8,4 @@ class Fonts {
   // fonts declaration
 
   static const String gothamBold = 'GothamBold';
-
 }
