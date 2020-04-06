@@ -15,6 +15,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     initialisation();
     super.initState();
   }
+
   initialisation() async {
     await SharedPrefService.setSharedPreference();
   }
@@ -32,18 +33,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             height: 650 * ScreenRatio.heightRatio,
             width: screenSize.width,
             decoration: BoxDecoration(
-              image:DecorationImage(
-                image: AssetImage('assets/images/wedding2.jpg')
-              )
-            ),
-
-
+                image: DecorationImage(
+                    image: AssetImage('assets/images/wedding2.jpg'))),
           ),
-
           CustomText(
             customText: "Tanghit",
             textColor: Colors.amber,
-            fontSize:45,
+            fontSize: 45,
           ),
           SizedBox(
             height: 30.0 * ScreenRatio.heightRatio,

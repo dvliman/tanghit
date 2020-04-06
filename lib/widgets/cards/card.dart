@@ -74,9 +74,9 @@ class _DashboardCardState extends State<DashboardCard> {
                       height: 500 * hf,
                       width: screenSize.width,
                       alignment: Alignment.center,
-                      decoration:  BoxDecoration(
-                        image:  DecorationImage(
-                          image:  AssetImage(i),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(i),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -100,16 +100,18 @@ class _DashboardCardState extends State<DashboardCard> {
                         EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: _current == index
-                            ? Colors.amber
-                            : Colors.grey),
+                        color: _current == index ? Colors.amber : Colors.grey),
                   );
                 }),
               )),
-      Positioned(
-          left: 10.0,
-          top: 560 * hf,
-          child: CustomText(customText: "Boutique1", textColor: Colors.amber,),),
+          Positioned(
+            left: 10.0,
+            top: 560 * hf,
+            child: CustomText(
+              customText: "Boutique1",
+              textColor: Colors.amber,
+            ),
+          ),
           Positioned(
               right: 10.0,
               top: 560 * hf,

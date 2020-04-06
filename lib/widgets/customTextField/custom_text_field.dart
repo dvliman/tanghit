@@ -32,7 +32,7 @@ class CustomTextField extends StatefulWidget {
       this.obscureText = false,
       this.onChanged,
       this.onTap,
-        this.editType,
+      this.editType,
       this.keyboardType,
       this.style});
 
@@ -41,14 +41,15 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
-  FocusNode myFocusNode =  FocusNode();
+  FocusNode myFocusNode = FocusNode();
   bool isValidated = false;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     widget.controller.addListener(() {
-      String localValidationResult = widget.validatorFunction(widget.controller.text);
+      String localValidationResult =
+          widget.validatorFunction(widget.controller.text);
       this.setState(() {
         isValidated = (localValidationResult == null) ? true : false;
       });
@@ -81,7 +82,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             });
             return validationResult;
           },
-          decoration:  InputDecoration(
+          decoration: InputDecoration(
             helperText: ' ',
             labelText: widget.labelText,
             labelStyle: TextStyle(
@@ -90,7 +91,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                     : Colors.black),
             border: OutlineInputBorder(
                 borderSide:
-                     BorderSide(color: Color(0XFF1DA6AD).withOpacity(1.0)),
+                    BorderSide(color: Color(0XFF1DA6AD).withOpacity(1.0)),
                 borderRadius: BorderRadius.circular(40.0)),
             prefixIcon: widget.icon,
             suffixIcon: isValidated

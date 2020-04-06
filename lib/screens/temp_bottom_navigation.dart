@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:tanghit/screens/about_screen.dart';
 import 'package:tanghit/screens/home_screen.dart';
 import 'package:tanghit/services/screen_ratio.dart';
@@ -31,54 +32,41 @@ class _TempBottomNavigationState extends State<TempBottomNavigation> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: _selectedIndex == 0
-                ? Icon(Icons.list, color: Colors.amber)
+                ? Icon(Icons.home, color: Colors.amber)
                 : Icon(
-                    Icons.list,
+                    Icons.home,
                     color: Colors.grey,
-                  ),
-            title: _selectedIndex == 0
-                ? Text(
-                    'Homepage',
-                    style: TextStyle(
-                      fontFamily: "Gotham-Bold",
-                      fontSize: 15,
-                      color: Color.fromARGB(255, 40, 47, 108),
-                    ),
-                  )
-                : Text(
-                    'home',
-                    style: TextStyle(
-                      fontFamily: "Gotham-Book",
-                      fontSize: 10,
-                    ),
                   ),
           ),
           BottomNavigationBarItem(
             icon: _selectedIndex == 1
                 ? Icon(
-                    Icons.account_box,
+                    Icons.search,
                     color: Colors.amber,
                   )
                 : Icon(
-                    Icons.account_box,
+                    Icons.search,
                     color: Colors.grey,
                   ),
-            title: _selectedIndex == 1
-                ? Text(
-                    'Search',
-                    style: TextStyle(
-                      fontFamily: "Gotham-Bold",
-                      fontSize: 15,
-                      color: Color.fromARGB(255, 40, 47, 108),
-                    ),
-                  )
-                : Text(
-                    'search',
-                    style: TextStyle(
-                      fontFamily: "Gotham-Book",
-                      fontSize: 10,
-                    ),
-                  ),
+          ),
+          BottomNavigationBarItem(
+            icon: _selectedIndex == 1
+                ? SvgPicture.asset('assets/logo/bell@3x.png')
+                : Icon(
+              Icons.add_alert,
+              color: Colors.grey,
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: _selectedIndex == 1
+                ? Icon(
+              Icons.person,
+              color: Colors.amber,
+            )
+                : Icon(
+              Icons.person_outline,
+              color: Colors.grey,
+            ),
           ),
         ],
         type: BottomNavigationBarType.fixed,
