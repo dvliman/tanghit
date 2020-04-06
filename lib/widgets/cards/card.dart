@@ -196,8 +196,7 @@ class CardHeader extends StatelessWidget {
             children: <Widget>[
               Text(
                 'Uraban Dhara',
-                style: TextStyle(
-                    fontStyle: FontStyle.italic, fontSize: 14),
+                style: TextStyle(fontStyle: FontStyle.italic, fontSize: 14),
               ),
               Row(
                 children: <Widget>[
