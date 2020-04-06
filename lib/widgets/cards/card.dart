@@ -27,13 +27,13 @@ class _DashboardCardState extends State<DashboardCard> {
     super.initState();
   }
 
-  initialisation() async {
+  void initialisation() async {
     await ScreenRatio.setScreenRatio();
     await SharedPrefService.setSharedPreference();
   }
 
   List<T> map<T>(List list, Function handler) {
-    List<T> result = [];
+    var result = <T>[];
     for (var i = 0; i < list.length; i++) {
       result.add(handler(i, list[i]));
     }
@@ -42,17 +42,8 @@ class _DashboardCardState extends State<DashboardCard> {
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
-    ScreenRatio.setScreenRatio(
-        currentScreenHeight: screenSize.height,
-        currentScreenWidth: screenSize.width);
-    var hf = ScreenRatio.heightRatio;
-    var wf = ScreenRatio.widthRatio;
-
     return Material(
       child: Container(
-        height: 600 * hf,
-        width: screenSize.width,
         color: Colors.white,
         child: Stack(children: <Widget>[
           Container(
@@ -61,7 +52,7 @@ class _DashboardCardState extends State<DashboardCard> {
               autoPlay: true,
               viewportFraction: 1.0,
               aspectRatio: MediaQuery.of(context).size.aspectRatio,
-              height: 500 * hf,
+              height: 500,
               onPageChanged: (index) {
                 setState(() {
                   _current = index;
@@ -71,8 +62,6 @@ class _DashboardCardState extends State<DashboardCard> {
                 return Builder(
                   builder: (BuildContext context) {
                     return Container(
-                      height: 500 * hf,
-                      width: screenSize.width,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         image: DecorationImage(
@@ -106,26 +95,26 @@ class _DashboardCardState extends State<DashboardCard> {
               )),
           Positioned(
             left: 10.0,
-            top: 560 * hf,
+            top: 560,
             child: CustomText(
-              customText: "Boutique1",
+              customText: 'Boutique1',
               textColor: Colors.amber,
             ),
           ),
           Positioned(
               right: 10.0,
-              top: 560 * hf,
+              top: 560,
               child: Container(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
                     Icon(Icons.favorite),
                     SizedBox(
-                      width: 20 * wf,
+                      width: 20,
                     ),
                     Icon(Icons.chat),
                     SizedBox(
-                      width: 20 * wf,
+                      width: 20,
                     ),
                     Icon(Icons.share)
                   ],

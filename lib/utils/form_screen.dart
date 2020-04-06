@@ -18,8 +18,6 @@ class FormScreen extends StatefulWidget {
 }
 
 class _FormScreenState extends State<FormScreen> {
-  final _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +25,7 @@ class _FormScreenState extends State<FormScreen> {
         child: Container(
           child: Builder(builder: (context) {
             return Form(
-              key: _formKey,
+              key: widget.formKey,
               child: Column(
                 children: <Widget>[
                   Expanded(

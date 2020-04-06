@@ -29,6 +29,7 @@ dependencies:
   email_validator:
   validators: ^2.0.0+1
   carousel_slider: ^1.4.1
+  pedantic:
 
 dev_dependencies:
   flutter_test:
