@@ -27,13 +27,13 @@ class _DashboardCardState extends State<DashboardCard> {
     super.initState();
   }
 
-  initialisation() async {
+  void initialisation() async {
     await ScreenRatio.setScreenRatio();
     await SharedPrefService.setSharedPreference();
   }
 
   List<T> map<T>(List list, Function handler) {
-    List<T> result = [];
+    var result = <T>[];
     for (var i = 0; i < list.length; i++) {
       result.add(handler(i, list[i]));
     }
@@ -42,7 +42,7 @@ class _DashboardCardState extends State<DashboardCard> {
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
+    final screenSize = MediaQuery.of(context).size;
     ScreenRatio.setScreenRatio(
         currentScreenHeight: screenSize.height,
         currentScreenWidth: screenSize.width);
@@ -108,7 +108,7 @@ class _DashboardCardState extends State<DashboardCard> {
             left: 10.0,
             top: 560 * hf,
             child: CustomText(
-              customText: "Boutique1",
+              customText: 'Boutique1',
               textColor: Colors.amber,
             ),
           ),

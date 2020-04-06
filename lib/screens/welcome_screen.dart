@@ -16,7 +16,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     super.initState();
   }
 
-  initialisation() async {
+  void initialisation() async {
     await SharedPrefService.setSharedPreference();
   }
 
