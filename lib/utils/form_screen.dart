@@ -18,7 +18,6 @@ class FormScreen extends StatefulWidget {
 }
 
 class _FormScreenState extends State<FormScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
