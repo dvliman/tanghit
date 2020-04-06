@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanghit/screens/about_screen.dart';
 import 'package:tanghit/screens/home_screen.dart';
-import 'package:tanghit/services/screen_ratio.dart';
 
 class TempBottomNavigation extends StatefulWidget {
   @override
@@ -21,10 +20,6 @@ class _TempBottomNavigationState extends State<TempBottomNavigation> {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    ScreenRatio.setScreenRatio(
-        currentScreenHeight: screenSize.height,
-        currentScreenWidth: screenSize.width);
     return Scaffold(
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(

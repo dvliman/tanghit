@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tanghit/services/screen_ratio.dart';
 import 'package:tanghit/services/shared_pref_service.dart';
 import 'package:tanghit/widgets/appButton/sign_in_button.dart';
 import 'package:tanghit/widgets/customText/custom_text.dart';
@@ -22,16 +21,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    ScreenRatio.setScreenRatio(
-        currentScreenHeight: screenSize.height,
-        currentScreenWidth: screenSize.width);
     return Scaffold(
       body: Column(
         children: <Widget>[
           Container(
-            height: 650 * ScreenRatio.heightRatio,
-            width: screenSize.width,
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage('assets/images/wedding2.jpg'))),
@@ -42,7 +35,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             fontSize: 45,
           ),
           SizedBox(
-            height: 30.0 * ScreenRatio.heightRatio,
+            height: 30.0,
           ),
         ],
       ),
