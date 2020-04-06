@@ -14,7 +14,7 @@ class AboutScreen extends StatelessWidget {
               Text(
                 'Tanghit',
                 style: TextStyle(
-                    color: Colors.amber,
+                    color: Colors.black,
                     fontSize: 45.0,
                     fontWeight: FontWeight.bold),
               ),

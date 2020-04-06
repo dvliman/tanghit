@@ -15,13 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: ListView(
           children: <Widget>[
             DashboardCard(),
-            SizedBox(
-              height: 20,
-            ),
-            DashboardCard(),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20,),
             DashboardCard()
           ],
         ),

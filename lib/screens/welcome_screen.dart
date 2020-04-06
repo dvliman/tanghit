@@ -31,7 +31,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           ),
           CustomText(
             customText: 'Tanghit',
-            textColor: Colors.amber,
+            textColor: Colors.black,
             fontSize: 45,
           ),
           SizedBox(
