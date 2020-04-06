@@ -9,7 +9,7 @@ class TempBottomNavigation extends StatefulWidget {
 }
 
 class _TempBottomNavigationState extends State<TempBottomNavigation> {
-  List<Widget> _pages = [HomeScreen(), AboutScreen()];
+  final List<Widget> _pages = [HomeScreen(), AboutScreen()];
 
   int _selectedIndex = 0;
 
@@ -21,7 +21,7 @@ class _TempBottomNavigationState extends State<TempBottomNavigation> {
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
+    final screenSize = MediaQuery.of(context).size;
     ScreenRatio.setScreenRatio(
         currentScreenHeight: screenSize.height,
         currentScreenWidth: screenSize.width);
@@ -40,7 +40,7 @@ class _TempBottomNavigationState extends State<TempBottomNavigation> {
                 ? Text(
                     'Homepage',
                     style: TextStyle(
-                      fontFamily: "Gotham-Bold",
+                      fontFamily: 'Gotham-Bold',
                       fontSize: 15,
                       color: Color.fromARGB(255, 40, 47, 108),
                     ),
@@ -48,7 +48,7 @@ class _TempBottomNavigationState extends State<TempBottomNavigation> {
                 : Text(
                     'home',
                     style: TextStyle(
-                      fontFamily: "Gotham-Book",
+                      fontFamily: 'Gotham-Book',
                       fontSize: 10,
                     ),
                   ),
@@ -67,7 +67,7 @@ class _TempBottomNavigationState extends State<TempBottomNavigation> {
                 ? Text(
                     'Search',
                     style: TextStyle(
-                      fontFamily: "Gotham-Bold",
+                      fontFamily: 'Gotham-Bold',
                       fontSize: 15,
                       color: Color.fromARGB(255, 40, 47, 108),
                     ),
@@ -75,7 +75,7 @@ class _TempBottomNavigationState extends State<TempBottomNavigation> {
                 : Text(
                     'search',
                     style: TextStyle(
-                      fontFamily: "Gotham-Book",
+                      fontFamily: 'Gotham-Book',
                       fontSize: 10,
                     ),
                   ),

@@ -50,7 +50,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
     widget.controller.addListener(() {
       String localValidationResult =
           widget.validatorFunction(widget.controller.text);
-      this.setState(() {
+      setState(() {
         isValidated = (localValidationResult == null) ? true : false;
       });
     });
@@ -77,7 +77,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           focusNode: widget.node,
           validator: (v) {
             String validationResult = widget.validatorFunction(v);
-            this.setState(() {
+            setState(() {
               isValidated = (validationResult == null) ? true : false;
             });
             return validationResult;

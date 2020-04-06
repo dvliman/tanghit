@@ -22,7 +22,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
+    final screenSize = MediaQuery.of(context).size;
     ScreenRatio.setScreenRatio(
         currentScreenHeight: screenSize.height,
         currentScreenWidth: screenSize.width);
@@ -37,7 +37,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     image: AssetImage('assets/images/wedding2.jpg'))),
           ),
           CustomText(
-            customText: "Tanghit",
+            customText: 'Tanghit',
             textColor: Colors.amber,
             fontSize: 45,
           ),

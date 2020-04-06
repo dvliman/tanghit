@@ -12,14 +12,14 @@ class AboutScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
-                "Tanghit",
+                'Tanghit',
                 style: TextStyle(
                     color: Colors.amber,
                     fontSize: 45.0,
                     fontWeight: FontWeight.bold),
               ),
               Text(
-                "App Version 01.00",
+                'App Version 01.00',
                 style: TextStyle(fontSize: 20.0),
               ),
             ],
