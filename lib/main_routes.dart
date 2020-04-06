@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tanghit/screens/login_screen.dart';
 import 'package:tanghit/screens/sign_up_screen.dart';
 import 'package:tanghit/screens/temp_bottom_navigation.dart';
-import 'package:tanghit/screens/welcome_screen.dart';
 import 'package:tanghit/utils/constants.dart';
 
 class Routes {

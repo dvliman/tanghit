@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:tanghit/screens/about_screen.dart';
 import 'package:tanghit/screens/home_screen.dart';
 import 'package:tanghit/services/screen_ratio.dart';
@@ -10,7 +9,12 @@ class TempBottomNavigation extends StatefulWidget {
 }
 
 class _TempBottomNavigationState extends State<TempBottomNavigation> {
-  List<Widget> _pages = [HomeScreen(), AboutScreen(), HomeScreen(), AboutScreen()];
+  List<Widget> _pages = [
+    HomeScreen(),
+    AboutScreen(),
+    HomeScreen(),
+    AboutScreen()
+  ];
 
   int _selectedIndex = 0;
 
@@ -40,35 +44,32 @@ class _TempBottomNavigationState extends State<TempBottomNavigation> {
             title: Text("Home"),
           ),
           BottomNavigationBarItem(
-            icon: _selectedIndex == 1
-                ? Icon(
-                    Icons.search,
-                    color: Colors.black,
-                  )
-                : Icon(
-                    Icons.search,
-                    color: Colors.grey,
-                  ),
-              title: Text("Search")
-          ),
+              icon: _selectedIndex == 1
+                  ? Icon(
+                      Icons.search,
+                      color: Colors.black,
+                    )
+                  : Icon(
+                      Icons.search,
+                      color: Colors.grey,
+                    ),
+              title: Text("Search")),
           BottomNavigationBarItem(
-            icon: _selectedIndex == 2
-                ? Image.asset('assets/logo/bell.png')
-                : Image.asset('assets/logo/bell.png'),
-              title: Text("Notification")
-          ),
+              icon: _selectedIndex == 2
+                  ? Image.asset('assets/logo/bell.png')
+                  : Image.asset('assets/logo/bell.png'),
+              title: Text("Notification")),
           BottomNavigationBarItem(
-            icon: _selectedIndex == 3
-                ? Icon(
-              Icons.person,
-              color: Colors.black,
-            )
-                : Icon(
-              Icons.person_outline,
-              color: Colors.grey,
-            ),
-              title: Text("About")
-          ),
+              icon: _selectedIndex == 3
+                  ? Icon(
+                      Icons.person,
+                      color: Colors.black,
+                    )
+                  : Icon(
+                      Icons.person_outline,
+                      color: Colors.grey,
+                    ),
+              title: Text("About")),
         ],
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
