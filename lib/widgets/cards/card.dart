@@ -26,7 +26,6 @@ class _DashboardCardState extends State<DashboardCard> {
   }
 
   void initialisation() async {
-    await ScreenRatio.setScreenRatio();
     await SharedPrefService.setSharedPreference();
   }
 

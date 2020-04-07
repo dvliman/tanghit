@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tanghit/services/screen_ratio.dart';
 import '../services/shared_pref_service.dart';
-import '../services/screen_ratio.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -9,8 +7,6 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
-  double hf = ScreenRatio.heightRatio;
-  double wf = ScreenRatio.widthRatio;
 
   @override
   void initState() {

@@ -9,6 +9,7 @@ class Routes {
     runApp(
       MaterialApp(
         routes: routes,
+        initialRoute: "/",
         navigatorKey: rootNavigatorKey,
         debugShowCheckedModeBanner: false,
       ),
