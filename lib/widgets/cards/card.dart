@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:tanghit/services/screen_ratio.dart';
 import 'package:tanghit/services/shared_pref_service.dart';
 
 final List<String> imagelist = [
@@ -20,13 +19,7 @@ class _DashboardCardState extends State<DashboardCard> {
 
   @override
   void initState() {
-    initialisation();
     super.initState();
-  }
-
-  void initialisation() async {
-    await ScreenRatio.setScreenRatio();
-    await SharedPrefService.setSharedPreference();
   }
 
   List<T> map<T>(List list, Function handler) {

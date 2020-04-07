@@ -6,7 +6,6 @@ import 'package:tanghit/utils/constants.dart';
 
 class Routes {
   var routes = <String, WidgetBuilder>{
-//    "/": (BuildContext context) => WelcomeScreen(),
     "/logInScreen": (BuildContext context) => LoginScreen(),
     "/signUpScreen": (BuildContext context) => SignUpScreen(),
     "/": (BuildContext context) => TempBottomNavigation(),
@@ -16,6 +15,7 @@ class Routes {
     runApp(
       MaterialApp(
         routes: routes,
+        initialRoute: "/",
         navigatorKey: rootNavigatorKey,
         debugShowCheckedModeBanner: false,
       ),

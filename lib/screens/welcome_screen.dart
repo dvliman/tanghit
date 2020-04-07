@@ -11,12 +11,7 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   void initState() {
-    initialisation();
     super.initState();
-  }
-
-  void initialisation() async {
-    await SharedPrefService.setSharedPreference();
   }
 
   @override

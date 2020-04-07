@@ -98,7 +98,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 ? Icon(
                     Icons.check_circle,
                     color: Color(0XFF1DA6AD).withOpacity(1.0),
-                    size: 16 * ScreenRatio.heightRatio,
+                    size: 16,
                   )
                 : null,
           ),
