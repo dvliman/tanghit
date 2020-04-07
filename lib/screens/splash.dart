@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../services/shared_pref_service.dart';
 
 class Splash extends StatefulWidget {
   @override

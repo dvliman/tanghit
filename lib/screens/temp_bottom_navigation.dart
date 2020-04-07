@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tanghit/screens/about_screen.dart';
 import 'package:tanghit/screens/home_screen.dart';
@@ -8,6 +11,8 @@ class TempBottomNavigation extends StatefulWidget {
 }
 
 class _TempBottomNavigationState extends State<TempBottomNavigation> {
+  List<NavigationItem> navItems;
+
   List<Widget> _pages = [
     HomeScreen(),
     AboutScreen(),
@@ -17,6 +22,18 @@ class _TempBottomNavigationState extends State<TempBottomNavigation> {
 
   int _selectedIndex = 0;
 
+  @override
+  void initState() {
+    navItems = [
+      NavigationItem(Icon(Icons.home), 'Home'),
+      NavigationItem(Icon(Icons.search), 'Search'),
+      NavigationItem(
+          ImageIcon(AssetImage('assets/logo/bell.png')), 'Notification'),
+      NavigationItem(Icon(Icons.person), 'About'),
+    ];
+    super.initState();
+  }
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -25,53 +42,39 @@ class _TempBottomNavigationState extends State<TempBottomNavigation> {
 
   @override
   Widget build(BuildContext context) {
+    var navigationBar = Platform.isIOS
+        ? CupertinoTabBar(
+            items: navItems.map((e) => e.item()).toList(),
+            currentIndex: _selectedIndex,
+            activeColor: Colors.black,
+            backgroundColor: Colors.white,
+            onTap: _onItemTapped,
+          )
+        : BottomNavigationBar(
+            items: navItems.map((e) => e.item()).toList(),
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: Colors.white,
+            currentIndex: _selectedIndex,
+            selectedItemColor: Colors.black,
+            unselectedItemColor: Colors.grey,
+            onTap: _onItemTapped,
+          );
+
     return Scaffold(
       body: _pages[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: _selectedIndex == 0
-                ? Icon(Icons.home, color: Colors.black)
-                : Icon(
-                    Icons.home,
-                    color: Colors.grey,
-                  ),
-            title: Text("Home"),
-          ),
-          BottomNavigationBarItem(
-              icon: _selectedIndex == 1
-                  ? Icon(
-                      Icons.search,
-                      color: Colors.black,
-                    )
-                  : Icon(
-                      Icons.search,
-                      color: Colors.grey,
-                    ),
-              title: Text("Search")),
-          BottomNavigationBarItem(
-              icon: _selectedIndex == 2
-                  ? Image.asset('assets/logo/bell.png')
-                  : Image.asset('assets/logo/bell.png'),
-              title: Text("Notification")),
-          BottomNavigationBarItem(
-              icon: _selectedIndex == 3
-                  ? Icon(
-                      Icons.person,
-                      color: Colors.black,
-                    )
-                  : Icon(
-                      Icons.person_outline,
-                      color: Colors.grey,
-                    ),
-              title: Text("About")),
-        ],
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black,
-        onTap: _onItemTapped,
-      ),
+      bottomNavigationBar: navigationBar,
     );
+  }
+}
+
+class NavigationItem {
+  NavigationItem(this.icon, this.title);
+
+  Widget icon;
+  @required
+  String title;
+
+  BottomNavigationBarItem item() {
+    return BottomNavigationBarItem(icon: icon, title: Text(title));
   }
 }

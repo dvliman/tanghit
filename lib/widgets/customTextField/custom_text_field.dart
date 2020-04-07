@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tanghit/services/screen_ratio.dart';
 
 class CustomTextField extends StatefulWidget {
   final Function validatorFunction;

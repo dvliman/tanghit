@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:tanghit/services/shared_pref_service.dart';
 
 final List<String> imagelist = [
   'assets/images/wedding.jpeg',
