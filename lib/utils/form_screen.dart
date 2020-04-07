@@ -9,9 +9,9 @@ class FormScreen extends StatefulWidget {
     this.title,
   }) : super(key: key);
 
-  final String title;
   final List<Widget> children;
   final GlobalKey formKey;
+  final String title;
 
   @override
   _FormScreenState createState() => _FormScreenState();

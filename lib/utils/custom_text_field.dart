@@ -24,33 +24,35 @@ class CustomTextField extends StatefulWidget {
       this.autofocus,
       this.style});
 
-  final Function validatorFunction;
-  final TextEditingController controller;
-  final Function onSaved;
-  final Function onTap;
-  final Widget icon;
-  final String labelText;
-  final TextInputType keyboardType;
+  final bool autofocus;
   final EdgeInsetsGeometry contentPadding;
-  final String initialValue;
-  final bool obscureText;
+  final TextEditingController controller;
   final InputDecoration decoration;
   final double height;
-  final double width;
+  final Widget icon;
+  final String initialValue;
   final List<TextInputFormatter> inputFormatters;
-  final int maxLength;
-  final Function(String) onChanged;
-  final int maxLines;
+  final TextInputType keyboardType;
   final TextStyle labelStyle;
-  final bool autofocus;
+  final String labelText;
+  final int maxLength;
+  final int maxLines;
+  final bool obscureText;
+  final Function onSaved;
+  final Function onTap;
   final TextStyle style;
+  final Function validatorFunction;
+  final double width;
 
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
+
+  final Function(String) onChanged;
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
   FocusNode myFocusNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     return Container(

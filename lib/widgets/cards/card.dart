@@ -13,8 +13,9 @@ class DashboardCard extends StatefulWidget {
 }
 
 class _DashboardCardState extends State<DashboardCard> {
-  int _current = 0;
   bool isClicked = false;
+
+  int _current = 0;
 
   @override
   void initState() {
