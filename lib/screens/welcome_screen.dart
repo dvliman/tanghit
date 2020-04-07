@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tanghit/services/shared_pref_service.dart';
 import 'package:tanghit/widgets/appButton/sign_in_button.dart';
 import 'package:tanghit/widgets/customText/custom_text.dart';
 
@@ -11,12 +10,7 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   void initState() {
-    initialisation();
     super.initState();
-  }
-
-  void initialisation() async {
-    await SharedPrefService.setSharedPreference();
   }
 
   @override

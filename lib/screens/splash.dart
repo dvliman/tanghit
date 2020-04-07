@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../services/shared_pref_service.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -11,11 +10,6 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    initialisation();
-  }
-
-  void initialisation() async {
-    await SharedPrefService.setSharedPreference();
   }
 
   @override
