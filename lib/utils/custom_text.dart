@@ -13,13 +13,13 @@ class CustomText extends StatelessWidget {
       Key key})
       : super(key: key);
 
-  final String customText;
-  final Color textColor;
-  final double fontSize;
-  final String fontFamily;
-  final FontWeight fontWeight;
   final TextAlign align;
+  final String customText;
+  final String fontFamily;
+  final double fontSize;
+  final FontWeight fontWeight;
   final double height;
+  final Color textColor;
 
   @override
   Widget build(BuildContext context) {

@@ -3,11 +3,11 @@ import '../utils/constants.dart';
 
 class ScreenRatio {
   static double heightRatio;
-  static double widthRatio;
+  static double landscapePadding;
+  static double potraitPadding;
   static double screenheight;
   static double screenwidth;
-  static double potraitPadding;
-  static double landscapePadding;
+  static double widthRatio;
 
   static void setScreenRatio(
       {double currentScreenHeight, double currentScreenWidth}) {

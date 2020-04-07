@@ -3,22 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:tanghit/services/screen_ratio.dart';
 
 class CustomTextField extends StatefulWidget {
-  final Function validatorFunction;
-  final TextEditingController controller;
-  final Function onSaved;
-  final Widget icon;
-  final FocusNode node;
-  final String labelText;
-  final TextInputType keyboardType;
-  final bool obscureText;
-  final InputDecoration decoration;
-  final double height;
-  final double width;
-  final Function(String) onChanged;
-  final TextStyle style;
-  final Function onTap;
-  final Function editType;
-
   CustomTextField(
       {@required this.onSaved,
       this.controller,
@@ -36,13 +20,30 @@ class CustomTextField extends StatefulWidget {
       this.keyboardType,
       this.style});
 
+  final TextEditingController controller;
+  final InputDecoration decoration;
+  final Function editType;
+  final double height;
+  final Widget icon;
+  final TextInputType keyboardType;
+  final String labelText;
+  final FocusNode node;
+  final bool obscureText;
+  final Function onSaved;
+  final Function onTap;
+  final TextStyle style;
+  final Function validatorFunction;
+  final double width;
+
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
+
+  final Function(String) onChanged;
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
-  FocusNode myFocusNode = FocusNode();
   bool isValidated = false;
+  FocusNode myFocusNode = FocusNode();
 
   @override
   void initState() {

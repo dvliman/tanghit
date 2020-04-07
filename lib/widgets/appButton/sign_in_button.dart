@@ -13,14 +13,14 @@ class SignInButton extends StatelessWidget {
     this.showLoader = false,
   });
 
-  final String buttonText;
   final Color bgColor;
-  final Color textColor;
-  final double textFontSize;
-  final Function onTapFunction;
   final Color borderColor;
   final double borderRadius;
+  final String buttonText;
+  final Function onTapFunction;
   final bool showLoader;
+  final Color textColor;
+  final double textFontSize;
 
   @override
   Widget build(BuildContext context) {

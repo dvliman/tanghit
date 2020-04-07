@@ -96,7 +96,7 @@ class PasswordTextField extends StatelessWidget {
 
 class EmailTextField extends StatelessWidget {
   EmailTextField({Key key}) : super(key: key);
-  @override
+
   @override
   Widget build(BuildContext context) {
     return CustomTextField(
