@@ -60,10 +60,27 @@ class _TempBottomNavigationState extends State<TempBottomNavigation> {
             onTap: _onItemTapped,
           );
 
-    return Scaffold(
-      body: _pages[_selectedIndex],
-      bottomNavigationBar: navigationBar,
-    );
+    return Platform.isIOS
+        ? CupertinoTabScaffold(
+            tabBar: navigationBar,
+            tabBuilder: (BuildContext context, int i) {
+              switch (i) {
+                case 0:
+                  return HomeScreen();
+                case 1:
+                  return AboutScreen();
+                case 2:
+                  return HomeScreen();
+                case 3:
+                  return AboutScreen();
+                default:
+                  return HomeScreen();
+              }
+            })
+        : Scaffold(
+            body: _pages[_selectedIndex],
+            bottomNavigationBar: navigationBar,
+          );
   }
 }
 

@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tanghit/screens/login_screen.dart';
 import 'package:tanghit/screens/sign_up_screen.dart';
@@ -13,12 +16,17 @@ class Routes {
 
   Routes() {
     runApp(
-      MaterialApp(
-        routes: routes,
-        initialRoute: "/",
-        navigatorKey: rootNavigatorKey,
-        debugShowCheckedModeBanner: false,
-      ),
+      Platform.isIOS
+          ? CupertinoApp(
+              routes: routes,
+              navigatorKey: rootNavigatorKey,
+              debugShowCheckedModeBanner: false,
+            )
+          : MaterialApp(
+              routes: routes,
+              navigatorKey: rootNavigatorKey,
+              debugShowCheckedModeBanner: false,
+            ),
     );
   }
 }
