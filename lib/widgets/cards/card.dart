@@ -40,7 +40,6 @@ class _DashboardCardState extends State<DashboardCard> {
             CardHeader(),
             Container(
               child: CarouselSlider(
-                autoPlay: true,
                 viewportFraction: 1.0,
                 aspectRatio: MediaQuery.of(context).size.aspectRatio,
                 height: 224,
@@ -169,21 +168,17 @@ class CardHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 72,
+      padding: EdgeInsets.all(10),
       color: Colors.white,
       child: (Row(
         children: <Widget>[
-          SizedBox(
-            width: 30,
-          ),
+          SizedBox(width: 5),
           Image.asset(
             'assets/images/urban_dhara.jpeg',
             height: 38,
-            width: 39,
+            width: 38,
           ),
-          SizedBox(
-            width: 14,
-          ),
+          SizedBox(width: 5),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
