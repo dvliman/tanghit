@@ -7,6 +7,8 @@ final List<String> imagelist = [
   'assets/images/ornament.jpeg'
 ];
 
+double widthValue = 5;
+
 class DashboardCard extends StatefulWidget {
   @override
   _DashboardCardState createState() => _DashboardCardState();
@@ -39,40 +41,36 @@ class _DashboardCardState extends State<DashboardCard> {
           children: <Widget>[
             CardHeader(),
             Container(
-              child: CarouselSlider(
-                viewportFraction: 1.0,
-                aspectRatio: MediaQuery.of(context).size.aspectRatio,
-                height: 224,
-                onPageChanged: (index) {
-                  setState(() {
-                    _current = index;
-                  });
-                },
-                items: imagelist.map((i) {
-                  return Builder(
-                    builder: (BuildContext context) {
-                      return Container(
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(i),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      );
-                    },
-                  );
-                }).toList(),
-              ),
-            ),
-            Container(
-              height: 160,
               child: Stack(
                 children: <Widget>[
+                  CarouselSlider(
+                    viewportFraction: 1.0,
+                    aspectRatio: MediaQuery.of(context).size.aspectRatio,
+                    height: 224,
+                    onPageChanged: (index) {
+                      setState(() {
+                        _current = index;
+                      });
+                    },
+                    items: imagelist.map((i) {
+                      return Builder(
+                        builder: (BuildContext context) {
+                          return Container(
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(i),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    }).toList(),
+                  ),
                   Positioned(
-                      top: 0.0,
-                      left: 0.0,
-                      right: 0.0,
+                      bottom: 10,
+                      left: 187.5,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: map<Widget>(imagelist, (index, url) {
@@ -89,9 +87,16 @@ class _DashboardCardState extends State<DashboardCard> {
                           );
                         }),
                       )),
+                ],
+              ),
+            ),
+            Container(
+              height: 160,
+              child: Stack(
+                children: <Widget>[
                   Positioned(
                     left: 10,
-                    top: 30,
+                    top: 20,
                     child: Container(
                       child: Text(
                         "Our signature blue cotton top is surely a wardrobe staple. You can dress it up or dress it down.",
@@ -161,51 +166,63 @@ class _DashboardCardState extends State<DashboardCard> {
 }
 
 class CardHeader extends StatelessWidget {
+
   const CardHeader({
     Key key,
   }) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(10),
-      color: Colors.white,
-      child: (Row(
-        children: <Widget>[
-          SizedBox(width: 5),
-          Image.asset(
-            'assets/images/urban_dhara.jpeg',
-            height: 38,
-            width: 38,
-          ),
-          SizedBox(width: 5),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'Uraban Dhara',
-                style: TextStyle(fontStyle: FontStyle.italic, fontSize: 14),
-              ),
-              Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.location_on,
-                    color: Colors.grey,
-                    size: 13,
-                  ),
-                  Text(
-                    'Kawai, Huwaii',
-                    style: TextStyle(
-                        fontStyle: FontStyle.italic,
-                        fontSize: 13,
-                        color: Colors.grey),
-                  ),
-                ],
-              )
-            ],
-          )
-        ],
-      )),
+    return GestureDetector(
+      onTap: (){
+
+      },
+      child: Container(
+        padding: EdgeInsets.all(10),
+        color: Colors.white,
+        child: (Row(
+          children: <Widget>[
+            SizedBox(width: widthValue),
+            Image.asset(
+              'assets/images/urban_dhara.jpeg',
+              height: 38,
+              width: 38,
+            ),
+            SizedBox(width: 5),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'Uraban Dhara',
+                  style: TextStyle(fontStyle: FontStyle.italic, fontSize: 14),
+                ),
+                Row(
+                  children: <Widget>[
+                    Icon(
+                      Icons.location_on,
+                      color: Colors.grey,
+                      size: 13,
+                    ),
+                    Text(
+                      'Kawai, Huwaii',
+                      style: TextStyle(
+                          fontStyle: FontStyle.italic,
+                          fontSize: 13,
+                          color: Colors.grey),
+                    ),
+                  ],
+                )
+              ],
+            )
+          ],
+        )),
+      ),
     );
   }
+
+  double passValues() {
+    return widthValue;
+  }
+
 }

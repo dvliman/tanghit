@@ -6,7 +6,13 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:tanghit/widgets/cards/card.dart';
 
 void main() {
-  testWidgets('placeholder', (WidgetTester tester) async {});
+  test('Counter value should be incremented', () {
+    final cardheader = CardHeader();
+    double val = cardheader.passValues();
+
+    expect(val, 5);
+  });
 }
