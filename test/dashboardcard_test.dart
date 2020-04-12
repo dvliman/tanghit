@@ -9,7 +9,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:tanghit/widgets/cards/card.dart';
 
 void main() {
-  test('Counter value should be incremented', () {
+  test('Checking widget size', () {
     final cardheader = CardHeader();
     double val = cardheader.passValues();
 
