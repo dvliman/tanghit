@@ -166,18 +166,14 @@ class _DashboardCardState extends State<DashboardCard> {
 }
 
 class CardHeader extends StatelessWidget {
-
   const CardHeader({
     Key key,
   }) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-
-      },
+      onTap: () {},
       child: Container(
         padding: EdgeInsets.all(10),
         color: Colors.white,
@@ -224,5 +220,4 @@ class CardHeader extends StatelessWidget {
   double passValues() {
     return widthValue;
   }
-
 }
