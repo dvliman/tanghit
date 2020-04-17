@@ -14,7 +14,7 @@ class CardPostModel {
 
   CardPostModel(
       {this.cardStatus,
-        this.cardId,
+      this.cardId,
       this.userId,
       this.title,
       this.tags,
@@ -42,7 +42,7 @@ class CardPostModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['cardStatus'] = this.cardStatus;
     data['cardId'] = this.cardId;
     data['userId'] = this.userId;
@@ -59,17 +59,17 @@ class CardPostModel {
   }
 
   static CardPostModel hardcordedPost = CardPostModel(
-    cardStatus: true,
-    cardId: "1",
-    userId: "1",
-    description: "Our signature blue cotton top is surely a wardrobe staple. You can dress it up or dress it down.",
-    country: "India",
-    city: "Kaual",
-    state: "Hawaii",
-    tags: "#cotton #everydaycasals #officewears",
-    postdate: DateTime.now(),
-    latitude: "12.2",
-    longitude: "14.4",
-    title: "Uraban Dhara"
-  );
+      cardStatus: true,
+      cardId: "1",
+      userId: "1",
+      description:
+          "Our signature blue cotton top is surely a wardrobe staple. You can dress it up or dress it down.",
+      country: "India",
+      city: "Kaual",
+      state: "Hawaii",
+      tags: "#cotton #everydaycasals #officewears",
+      postdate: DateTime.now(),
+      latitude: "12.2",
+      longitude: "14.4",
+      title: "Uraban Dhara");
 }
