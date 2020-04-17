@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:tanghit/models/feed_card_model.dart';
 
 final List<String> imagelist = [
   'assets/images/wedding.jpeg',
@@ -35,7 +36,7 @@ class _DashboardCardState extends State<DashboardCard> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Container(
+      child: CardPostModel.hardcordedPost.cardStatus ? Container(
         color: Colors.transparent,
         child: Column(
           children: <Widget>[
@@ -99,7 +100,7 @@ class _DashboardCardState extends State<DashboardCard> {
                     top: 20,
                     child: Container(
                       child: Text(
-                        "Our signature blue cotton top is surely a wardrobe staple. You can dress it up or dress it down.",
+                        CardPostModel.hardcordedPost.description,
                         style: TextStyle(color: Colors.black, fontSize: 16),
                       ),
                       width: 400,
@@ -109,7 +110,7 @@ class _DashboardCardState extends State<DashboardCard> {
                     left: 10,
                     top: 80,
                     child: Text(
-                      '#cotton #everydaycasuals #officewear',
+                      CardPostModel.hardcordedPost.tags,
                       style: TextStyle(
                           fontStyle: FontStyle.italic,
                           fontSize: 14,
@@ -160,8 +161,8 @@ class _DashboardCardState extends State<DashboardCard> {
             )
           ],
         ),
-      ),
-    );
+      ) : Container(),
+    ) ;
   }
 }
 
@@ -190,7 +191,7 @@ class CardHeader extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  'Uraban Dhara',
+                  CardPostModel.hardcordedPost.title,
                   style: TextStyle(fontStyle: FontStyle.italic, fontSize: 14),
                 ),
                 Row(
@@ -201,7 +202,7 @@ class CardHeader extends StatelessWidget {
                       size: 13,
                     ),
                     Text(
-                      'Kawai, Huwaii',
+                      "${CardPostModel.hardcordedPost.city},${CardPostModel.hardcordedPost.state}",
                       style: TextStyle(
                           fontStyle: FontStyle.italic,
                           fontSize: 13,

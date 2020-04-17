@@ -11,7 +11,7 @@ class Routes {
   Routes() {
     runApp(
       Platform.isIOS
-          ? CupertinoApp(
+          ? MaterialApp(
               routes: routes,
               navigatorKey: rootNavigatorKey,
               debugShowCheckedModeBanner: false,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tanghit/models/detailed_page_model.dart';
 
 String backgroundimage = ('assets/images/background_header.png');
 
@@ -63,7 +64,7 @@ class ShopDetailPageState extends State<ShopDetailPage>
                 top: 100,
                 left: MediaQuery.of(context).size.width / 2 - 50,
                 child: Text(
-                  "Urban Dhara",
+                  DetailedPageModel.hardcordedDetailedPage.title,
                   style: TextStyle(
                       fontStyle: FontStyle.italic,
                       fontSize: 22,
@@ -75,7 +76,7 @@ class ShopDetailPageState extends State<ShopDetailPage>
                 child: Container(
                   width: 300,
                   child: Text(
-                    "We are all about avant-garde dressing with indian roots in energetic warm colours.",
+                    DetailedPageModel.hardcordedDetailedPage.description,
                     style: TextStyle(
                         fontStyle: FontStyle.italic,
                         fontSize: 16,
@@ -87,7 +88,7 @@ class ShopDetailPageState extends State<ShopDetailPage>
                 top: 180,
                 left: 120,
                 child: Text(
-                  "Category : Boutique",
+                  "Category : ${DetailedPageModel.hardcordedDetailedPage.category}",
                   style: TextStyle(
                       fontStyle: FontStyle.italic,
                       fontSize: 16,
@@ -155,69 +156,9 @@ class DetailTabView extends StatelessWidget {
                   crossAxisCount: 3,
                 ),
                 children: <Widget>[
-                  Image.asset(
-                    'assets/images/design1.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design2.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design3.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design4.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design5.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design6.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design4.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design5.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design6.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design4.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design5.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design6.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design4.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design5.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design6.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design4.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design5.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design6.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design4.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design5.png',
-                  ),
-                  Image.asset(
-                    'assets/images/design6.png',
-                  ),
+                  for (int i = 0; i < 18; i++)
+                    Image.asset(
+                        DetailedPageModel.hardcordedDetailedPage.imageList[i])
                 ],
               ),
               Text("Hello"),
