@@ -4,10 +4,10 @@ import 'package:tanghit/models/detailed_page_model.dart';
 String backgroundimage = ('assets/images/background_header.png');
 
 class ShopDetailPage extends StatefulWidget {
+  ShopDetailPage({this.index, this.title});
+
   final int index;
   final String title;
-
-  ShopDetailPage({this.index, this.title});
 
   @override
   State<StatefulWidget> createState() {
@@ -107,9 +107,9 @@ class ShopDetailPageState extends State<ShopDetailPage>
 }
 
 class DetailTabView extends StatelessWidget {
-  final TabController tabController;
-
   DetailTabView({this.tabController});
+
+  final TabController tabController;
 
   @override
   Widget build(BuildContext context) {
