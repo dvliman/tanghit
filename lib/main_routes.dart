@@ -25,7 +25,7 @@ class Routes {
   }
 
   var routes = <String, WidgetBuilder>{
-   '/': (BuildContext context) => TempBottomNavigation(),
+    '/': (BuildContext context) => TempBottomNavigation(),
     '/logInScreen': (BuildContext context) => LoginScreen(),
     '/signUpScreen': (BuildContext context) => SignUpScreen(),
     // '/': (BuildContext context) => ShopDetailPage(),

@@ -10,7 +10,6 @@ class ShopDetailPage extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return ShopDetailPageState();
   }
 }
@@ -21,14 +20,12 @@ class ShopDetailPageState extends State<ShopDetailPage>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     tabController = TabController(length: 3, vsync: this, initialIndex: 0);
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
         body: Column(
       children: <Widget>[
@@ -112,7 +109,6 @@ class DetailTabView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Column(
       children: <Widget>[
         Container(
