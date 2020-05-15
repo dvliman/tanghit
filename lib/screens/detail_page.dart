@@ -60,7 +60,7 @@ class ShopDetailPageState extends State<ShopDetailPage>
                 top: 100,
                 left: MediaQuery.of(context).size.width / 2 - 50,
                 child: Text(
-                  "Urban Dhara",
+                  'Urban Dhara',
                   style: TextStyle(
                       fontStyle: FontStyle.italic,
                       fontSize: 22,
@@ -72,7 +72,7 @@ class ShopDetailPageState extends State<ShopDetailPage>
                 child: Container(
                   width: 300,
                   child: Text(
-                    "We are all about avant-garde dressing with indian roots in energetic warm colours.",
+                    'We are all about avant-garde dressing with indian roots in energetic warm colours.',
                     style: TextStyle(
                         fontStyle: FontStyle.italic,
                         fontSize: 16,
@@ -84,7 +84,7 @@ class ShopDetailPageState extends State<ShopDetailPage>
                 top: 180,
                 left: 120,
                 child: Text(
-                  'Category : ${DetailedPageModel.hardcordedDetailedPage.category}',
+                  'Category : Boutique',
                   style: TextStyle(
                       fontStyle: FontStyle.italic,
                       fontSize: 16,

@@ -44,14 +44,16 @@ class _DashboardCardState extends State<DashboardCard> {
               child: Stack(
                 children: <Widget>[
                   CarouselSlider(
+                    options: CarouselOptions(
                     viewportFraction: 1.0,
                     aspectRatio: MediaQuery.of(context).size.aspectRatio,
                     height: 224,
-                    onPageChanged: (index) {
+                    onPageChanged: (index, reason) {
                       setState(() {
                         _current = index;
                       });
                     },
+                    ),
                     items: imagelist.map((i) {
                       return Builder(
                         builder: (BuildContext context) {
@@ -99,7 +101,7 @@ class _DashboardCardState extends State<DashboardCard> {
                     top: 20,
                     child: Container(
                       child: Text(
-                        "Our signature blue cotton top is surely a wardrobe staple. You can dress it up or dress it down.",
+                        'Our signature blue cotton top is surely a wardrobe staple. You can dress it up or dress it down.',
                         style: TextStyle(color: Colors.black, fontSize: 16),
                       ),
                       width: 400,
