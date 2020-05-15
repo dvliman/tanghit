@@ -13,7 +13,7 @@ class TempBottomNavigation extends StatefulWidget {
 class _TempBottomNavigationState extends State<TempBottomNavigation> {
   List<NavigationItem> navItems;
 
-  List<Widget> _pages = [
+  final List<Widget> _pages = [
     HomeScreen(),
     AboutScreen(),
     HomeScreen(),

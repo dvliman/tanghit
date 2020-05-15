@@ -201,7 +201,11 @@ class CardHeader extends StatelessWidget {
                       size: 13,
                     ),
                     Text(
+<<<<<<< HEAD
                       'Kawai, Huwaii',
+=======
+                      '${CardPostModel.hardcordedPost.city},${CardPostModel.hardcordedPost.state}',
+>>>>>>> d8d25b5... fixed warnings
                       style: TextStyle(
                           fontStyle: FontStyle.italic,
                           fontSize: 13,
