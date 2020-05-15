@@ -205,7 +205,7 @@ class CardHeader extends StatelessWidget {
                       size: 13,
                     ),
                     Text(
-                      "${CardPostModel.hardcordedPost.city},${CardPostModel.hardcordedPost.state}",
+                      '${CardPostModel.hardcordedPost.city},${CardPostModel.hardcordedPost.state}',
                       style: TextStyle(
                           fontStyle: FontStyle.italic,
                           fontSize: 13,

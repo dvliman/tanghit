@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ? CupertinoTabView(builder: (context) {
             return CupertinoPageScaffold(
                 child: container,
-                navigationBar: CupertinoNavigationBar(middle: Text("Tanghit")));
+                navigationBar: CupertinoNavigationBar(middle: Text('Tanghit')));
           })
         : Scaffold(body: container);
   }

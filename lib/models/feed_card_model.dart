@@ -42,34 +42,34 @@ class CardPostModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['cardStatus'] = this.cardStatus;
-    data['cardId'] = this.cardId;
-    data['userId'] = this.userId;
-    data['title'] = this.title;
-    data['tags'] = this.tags;
-    data['country'] = this.country;
-    data['state'] = this.state;
-    data['city'] = this.city;
-    data['latitude'] = this.latitude;
-    data['longitude'] = this.longitude;
-    data['description'] = this.description;
-    data['postdate'] = this.postdate;
+    final data = <String, dynamic>{};
+    data['cardStatus'] = cardStatus;
+    data['cardId'] = cardId;
+    data['userId'] = userId;
+    data['title'] = title;
+    data['tags'] = tags;
+    data['country'] = country;
+    data['state'] = state;
+    data['city'] = city;
+    data['latitude'] = latitude;
+    data['longitude'] = longitude;
+    data['description'] = description;
+    data['postdate'] = postdate;
     return data;
   }
 
   static CardPostModel hardcordedPost = CardPostModel(
       cardStatus: true,
-      cardId: "1",
-      userId: "1",
+      cardId: '1',
+      userId: '1',
       description:
-          "Our signature blue cotton top is surely a wardrobe staple. You can dress it up or dress it down.",
-      country: "India",
-      city: "Kaual",
-      state: "Hawaii",
-      tags: "#cotton #everydaycasals #officewears",
+          'Our signature blue cotton top is surely a wardrobe staple. You can dress it up or dress it down.',
+      country: 'India',
+      city: 'Kaual',
+      state: 'Hawaii',
+      tags: '#cotton #everydaycasals #officewears',
       postdate: DateTime.now(),
-      latitude: "12.2",
-      longitude: "14.4",
-      title: "Uraban Dhara");
+      latitude: '12.2',
+      longitude: '14.4',
+      title: 'Uraban Dhara');
 }

@@ -54,7 +54,7 @@ class ShopDetailPageState extends State<ShopDetailPage>
               child: Center(
                 child: CircleAvatar(
                   child: ClipOval(
-                      child: Image.asset("assets/images/urban_dhara.jpeg")),
+                      child: Image.asset('assets/images/urban_dhara.jpeg')),
                   radius: 30.0,
                   backgroundColor: Colors.redAccent,
                 ),
@@ -88,7 +88,7 @@ class ShopDetailPageState extends State<ShopDetailPage>
                 top: 180,
                 left: 120,
                 child: Text(
-                  "Category : ${DetailedPageModel.hardcordedDetailedPage.category}",
+                  'Category : ${DetailedPageModel.hardcordedDetailedPage.category}',
                   style: TextStyle(
                       fontStyle: FontStyle.italic,
                       fontSize: 16,
@@ -161,10 +161,10 @@ class DetailTabView extends StatelessWidget {
                         DetailedPageModel.hardcordedDetailedPage.imageList[i])
                 ],
               ),
-              Text("Hello"),
+              Text('Hello'),
               Center(
                   child: Text(
-                "Yet to Come!!",
+                'Yet to Come!!',
                 style: TextStyle(fontSize: 25.0),
               ))
             ],
