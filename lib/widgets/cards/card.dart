@@ -46,14 +46,16 @@ class _DashboardCardState extends State<DashboardCard> {
                     child: Stack(
                       children: <Widget>[
                         CarouselSlider(
-                          viewportFraction: 1.0,
-                          aspectRatio: MediaQuery.of(context).size.aspectRatio,
-                          height: 224,
-                          onPageChanged: (index) {
-                            setState(() {
-                              _current = index;
-                            });
-                          },
+                          options: CarouselOptions(
+                              viewportFraction: 1.0,
+                              aspectRatio:
+                                  MediaQuery.of(context).size.aspectRatio,
+                              height: 224,
+                              onPageChanged: (index, reason) {
+                                setState(() {
+                                  _current = index;
+                                });
+                              }),
                           items: imagelist.map((i) {
                             return Builder(
                               builder: (BuildContext context) {
@@ -205,7 +207,7 @@ class CardHeader extends StatelessWidget {
                       size: 13,
                     ),
                     Text(
-                      "${CardPostModel.hardcordedPost.city},${CardPostModel.hardcordedPost.state}",
+                      '${CardPostModel.hardcordedPost.city},${CardPostModel.hardcordedPost.state}',
                       style: TextStyle(
                           fontStyle: FontStyle.italic,
                           fontSize: 13,

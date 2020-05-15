@@ -4,14 +4,13 @@ import 'package:tanghit/models/detailed_page_model.dart';
 String backgroundimage = ('assets/images/background_header.png');
 
 class ShopDetailPage extends StatefulWidget {
+  ShopDetailPage({this.index, this.title});
+
   final int index;
   final String title;
 
-  ShopDetailPage({this.index, this.title});
-
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return ShopDetailPageState();
   }
 }
@@ -22,14 +21,12 @@ class ShopDetailPageState extends State<ShopDetailPage>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     tabController = TabController(length: 3, vsync: this, initialIndex: 0);
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
         body: Column(
       children: <Widget>[
@@ -54,7 +51,7 @@ class ShopDetailPageState extends State<ShopDetailPage>
               child: Center(
                 child: CircleAvatar(
                   child: ClipOval(
-                      child: Image.asset("assets/images/urban_dhara.jpeg")),
+                      child: Image.asset('assets/images/urban_dhara.jpeg')),
                   radius: 30.0,
                   backgroundColor: Colors.redAccent,
                 ),
@@ -88,7 +85,7 @@ class ShopDetailPageState extends State<ShopDetailPage>
                 top: 180,
                 left: 120,
                 child: Text(
-                  "Category : ${DetailedPageModel.hardcordedDetailedPage.category}",
+                  'Category : ${DetailedPageModel.hardcordedDetailedPage.category}',
                   style: TextStyle(
                       fontStyle: FontStyle.italic,
                       fontSize: 16,
@@ -107,13 +104,12 @@ class ShopDetailPageState extends State<ShopDetailPage>
 }
 
 class DetailTabView extends StatelessWidget {
-  final TabController tabController;
-
   DetailTabView({this.tabController});
+
+  final TabController tabController;
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Column(
       children: <Widget>[
         Container(
@@ -161,10 +157,10 @@ class DetailTabView extends StatelessWidget {
                         DetailedPageModel.hardcordedDetailedPage.imageList[i])
                 ],
               ),
-              Text("Hello"),
+              Text('Hello'),
               Center(
                   child: Text(
-                "Yet to Come!!",
+                'Yet to Come!!',
                 style: TextStyle(fontSize: 25.0),
               ))
             ],

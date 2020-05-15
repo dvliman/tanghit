@@ -11,7 +11,7 @@ import 'package:tanghit/widgets/cards/card.dart';
 void main() {
   test('Checking widget size', () {
     final cardheader = CardHeader();
-    double val = cardheader.passValues();
+    var val = cardheader.passValues();
 
     expect(val, 5);
   });

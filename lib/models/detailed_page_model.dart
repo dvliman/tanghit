@@ -27,27 +27,27 @@ class DetailedPageModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final data = <String, dynamic>{};
 
-    data['cardStatus'] = this.cardStatus;
-    data['cardId'] = this.cardId;
-    data['userId'] = this.userId;
-    data['title'] = this.title;
-    data['description'] = this.description;
-    data['category'] = this.category;
-    data['imageList'] = this.imageList;
+    data['cardStatus'] = cardStatus;
+    data['cardId'] = cardId;
+    data['userId'] = userId;
+    data['title'] = title;
+    data['description'] = description;
+    data['category'] = category;
+    data['imageList'] = imageList;
 
     return data;
   }
 
   static DetailedPageModel hardcordedDetailedPage = DetailedPageModel(
     cardStatus: true,
-    category: "Boutique",
-    cardId: "1",
-    userId: "1",
+    category: 'Boutique',
+    cardId: '1',
+    userId: '1',
     description:
-        "We are all about avant-garde dressing with indian roots inenergetic warm colours.",
-    title: "Uraban Dhara",
+        'We are all about avant-garde dressing with indian roots inenergetic warm colours.',
+    title: 'Uraban Dhara',
     imageList: [
       'assets/images/design1.png',
       'assets/images/design2.png',
