@@ -1,6 +1,5 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:tanghit/screens/entryscreens/values/colors.dart';
 import 'package:tanghit/utils/custom_text_field.dart';
 import 'package:tanghit/utils/form_screen.dart';
 import 'package:tanghit/widgets/appButton/sign_in_button.dart';
@@ -84,7 +83,7 @@ class PasswordTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextField(
-        style: TextStyle(color: AppColors.primaryText),
+        style: TextStyle(color:  Colors.black),
         keyboardType: TextInputType.text,
         onSaved: (v) {},
         labelText: 'Password',
