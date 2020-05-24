@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
 class TextFieldWithIcon extends StatelessWidget {
-
   final TextEditingController myController;
   final String hint;
   final String iconLocation;
@@ -24,8 +22,8 @@ class TextFieldWithIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color:  Colors.black,
-        borderRadius: BorderRadius.all(Radius.circular(10  )),
+        color: Colors.black,
+        borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
       width: 335,
       height: 50,
@@ -33,33 +31,33 @@ class TextFieldWithIcon extends StatelessWidget {
         children: <Widget>[
           Padding(
             padding: EdgeInsets.only(
-              left: 15 ,
-              right: 15 ,
+              left: 15,
+              right: 15,
             ),
             child: Container(
-              width: 270 ,
+              width: 270,
               child: TextFormField(
                 onChanged: (value) {
                   onSearch(value);
                 },
                 enabled: screen == 'preview' ? false : true,
                 cursorColor: Colors.red,
-                cursorWidth: 4 ,
-                cursorRadius: Radius.circular(10  ),
+                cursorWidth: 4,
+                cursorRadius: Radius.circular(10),
                 inputFormatters: [LengthLimitingTextInputFormatter(256)],
                 controller: myController,
                 style: TextStyle(
                   fontFamily: 'Gotham-Book',
                   fontSize: 16,
-                  color:  Colors.black,
+                  color: Colors.black,
                 ),
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: hint,
                   hintStyle: TextStyle(
                     fontFamily: 'Gotham-Book',
-                    fontSize: 16  ,
-                    color:  Colors.black,
+                    fontSize: 16,
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -70,8 +68,8 @@ class TextFieldWithIcon extends StatelessWidget {
               onIconTap();
             },
             child: Container(
-              height: 24 ,
-              width: 24 ,
+              height: 24,
+              width: 24,
               child: Image.asset(
                 iconLocation,
               ),

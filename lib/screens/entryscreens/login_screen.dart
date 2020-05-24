@@ -83,7 +83,7 @@ class PasswordTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextField(
-        style: TextStyle(color:  Colors.black),
+        style: TextStyle(color: Colors.black),
         keyboardType: TextInputType.text,
         onSaved: (v) {},
         labelText: 'Password',

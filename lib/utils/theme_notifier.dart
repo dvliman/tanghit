@@ -5,9 +5,9 @@ class ThemeNotifier with ChangeNotifier {
 
   ThemeNotifier(this._themeData);
 
-   ThemeData getTheme() => _themeData;
+  ThemeData getTheme() => _themeData;
 
-   Future setTheme(ThemeData themeData) async {
+  Future setTheme(ThemeData themeData) async {
     _themeData = themeData;
     notifyListeners();
   }
